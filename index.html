@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Asset/Icon/Basic/App/SoftwareLogoD.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisualVigor</title>
+    <!-- =========================================
+         System & Theme
+         ========================================= -->
+    <link rel="stylesheet" href="/Source/CSS/Basic/System/Theme/reset.css">
+    <link rel="stylesheet" href="/Source/CSS/Basic/System/Theme/theme.css">
+    <link rel="stylesheet" href="/Source/CSS/Basic/System/Fonts/fonts.css">
+
+    <!-- =========================================
+         Global Layout
+         ========================================= -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/appLayout.css">
+
+    <!-- =========================================
+         Main Components
+         ========================================= -->
+    <!-- Menu Bar -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MenuBar/menuBar.css">
+    <!-- Tool Bar -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/ToolBar/toolBar.css">
+    <!-- Info Bar -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/InfoBar/infoBar.css">
+
+    <!-- =========================================
+         Controller Styles
+         ========================================= -->
+    <link rel="stylesheet" href="/Source/CSS/Controller/groupTitle.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/preview.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/colorPalette.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/listStack.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/elementList.css">
+    <!-- Standard Components -->
+    <link rel="stylesheet" href="/Source/CSS/Controller/banner.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/button.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/checkBox.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/inputField.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/segmentedButton.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/textBox.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/toggle.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/slider.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/collaboration.css">
+
+    <!-- =========================================
+         Main Area & Panels
+         ========================================= -->
+    <!-- Panels -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/PanelUni/panel.css">
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/PanelUni/SidePanel/BottomSidePanel/animationPanel.css">
+    <!-- Drag Lines -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/DragLine/dragLine.css">
+
+    <!-- =========================================
+         Popups & Dialogs
+         ========================================= -->
+    <link rel="stylesheet" href="/Source/CSS/Popup/Dialog/dialog.css">
+
+    <!-- =========================================
+         Workspace
+         ========================================= -->
+    <!-- Core Workspace Layout -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/workspace.css">
+    <!-- Workspace Components -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/workspaceTabs.css">
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/workspaceHeader.css">
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/workspaceRuler.css">
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/workspaceCanvas.css">
+    <link rel="stylesheet" href="/Source/CSS/Layout/MainArea/Workspace/patterns.css">
+
+    <!-- =========================================
+         Popups & Overlays
+         ========================================= -->
+    <link rel="stylesheet" href="/Source/CSS/Layout/Popup/ToolTip/toolTip.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/shortcutGuide.css">
+    <link rel="stylesheet" href="/Source/CSS/Controller/pluginGuide.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="menu-bar">
+        <div class="menu-bar__container">
+          <div class="menu-bar__section--left">
+            <button class="menu-bar__btn--capsule" data-i18n="Layout.MenuBar.file">File</button>
+            <button class="menu-bar__btn--capsule" data-i18n="Layout.MenuBar.edit">Edit</button>
+            <button class="menu-bar__btn--capsule" data-i18n="Layout.MenuBar.view">View</button>
+          </div>
+          <div class="menu-bar__section--center"></div>
+          <div class="menu-bar__section--right">
+            <button class="menu-bar__btn--circle" id="btn-language" title="Language">
+              <img src="/Asset/Icon/Layout/MenuBar/MenuRightBar/sysLanguageD.svg" alt="Language">
+            </button>
+            <button class="menu-bar__btn--circle" id="btn-theme" title="Theme">
+              <img src="/Asset/Icon/Layout/MenuBar/MenuRightBar/sysThemeD.svg" alt="Theme">
+            </button>
+            <button class="menu-bar__btn--circle" id="btn-settings" title="Settings">
+              <img src="/Asset/Icon/Layout/MenuBar/MenuRightBar/sysSettingsD.svg" alt="Settings">
+            </button>
+            <button class="menu-bar__btn--capsule" data-i18n="Layout.MenuBar.help">Help</button>
+          </div>
+        </div>
+      </div>
+      <div class="mainwindow">
+        <!-- ToolBar will be injected here by JS -->
+        <div class="work-area" style="flex: 1; background: var(--color-bg-main);"></div>
+      </div>
+      <div class="info-bar">
+        <div class="info-bar__left">
+          <button class="info-bar__btn"></button>
+        </div>
+        <div class="info-bar__right"></div>
+      </div>
+    </div>
+    <script src="/Source/JS/Lib/UTIF.js"></script>
+    <script>var exports = {};</script>
+    <script src="/Source/JS/Lib/omggif.js"></script>
+    <script>window.GifReader = exports.GifReader; window.GifWriter = exports.GifWriter;</script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

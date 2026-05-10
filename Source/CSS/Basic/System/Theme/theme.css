@@ -1,0 +1,136 @@
+/* =========================================
+   Theme Variables
+   ========================================= */
+
+:root {
+    /* Gray Scale */
+    --color-gray-35: rgba(128, 128, 128, 0.35);
+    --color-gray-25: rgba(128, 128, 128, 0.25);
+    --color-gray-15: rgba(128, 128, 128, 0.15);
+    --color-gray-5: rgba(128, 128, 128, 0.05);
+    --color-bg-gray: rgba(38, 38, 41, 1);
+    --color-bg-gray2: rgba(77, 77, 79, 1);
+
+    /* Background Colors */
+    --color-bg-main: rgba(23, 23, 25, 1);         /* Main background */
+    --color-bg-alt: rgba(26, 26, 28, 1);          /* Alternative background */
+    --color-bg-opposite: rgba(231, 231, 233, 1);  /* Opposite background */
+    --color-bg-bar: rgba(37, 37, 39, 0.2);        /* Top/Side bars, etc. */
+    --color-bg-panel: rgba(37, 37, 38, 1);        /* Panel background */
+    --color-mask-1: rgba(255, 255, 255, 0.01);
+    --color-mask-10: rgba(255, 255, 255, 0.1);
+    --color-mask-35: rgba(255, 255, 255, 0.35);
+
+    /* Theme Colors (Blue/Green/Red/Yellow/Purple/Cyan/Gray/Orange) */
+    --color-blue-20: rgba(53, 115, 240, 0.2);
+    --color-green-20: rgba(95, 173, 101, 0.2);
+    --color-red-20: rgba(219, 92, 92, 0.2);
+    --color-yellow-20: rgba(242, 197, 92, 0.2);
+    --color-purple-20: rgba(149, 90, 224, 0.2);
+    --color-cyan-20: rgba(36, 163, 148, 0.2);
+    --color-gray-20: rgba(128, 128, 128, 0.2);
+    --color-orange-20: rgba(224, 136, 85, 0.2);
+
+    /* Transition Constants */
+    --transition-theme: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --color-blue-50: rgba(53, 115, 240, 0.5);
+    --color-green-50: rgba(95, 173, 101, 0.5);
+    --color-red-50: rgba(219, 92, 92, 0.5);
+    --color-yellow-50: rgba(242, 197, 92, 0.5);
+    --color-purple-50: rgba(149, 90, 224, 0.5);
+    --color-cyan-50: rgba(36, 163, 148, 0.5);
+    --color-gray-50: rgba(128, 128, 128, 0.5);
+    --color-orange-50: rgba(224, 136, 85, 0.5);
+
+    --color-blue-100: rgba(53, 115, 240, 1);
+    --color-green-100: rgba(95, 173, 101, 1);
+    --color-red-100: rgba(219, 92, 92, 1);
+    --color-yellow-100: rgba(242, 197, 92, 1);
+    --color-purple-100: rgba(149, 90, 224, 1);
+    --color-cyan-100: rgba(36, 163, 148, 1);
+    --color-gray-100: rgba(128, 128, 128, 1);
+    --color-orange-100: rgba(224, 136, 85, 1);
+
+    /* Font Colors */
+    --color-font: rgba(255, 255, 255, 0.5);
+    --color-font-title: rgba(255, 255, 255, 0.9);
+
+    /* Accent Colors */
+    /* Primary Accent: Blue series; Secondary Accent: Yellow series */
+    --color-accent-100: var(--color-yellow-100);
+    --color-accent-50: var(--color-yellow-50);
+    --color-accent-20: var(--color-yellow-20);
+
+    --color-vice-accent-100: var(--color-gray-100);
+    --color-vice-accent-50: var(--color-gray-50);
+    --color-vice-accent-20: var(--color-gray-20);
+}
+
+/* =========================================
+   Light Theme Overrides
+   ========================================= */
+
+.light-theme {
+    /* Gray Scale */
+    --color-gray-35: rgba(128, 128, 128, 0.35);
+    --color-gray-25: rgba(128, 128, 128, 0.25);
+    --color-gray-15: rgba(128, 128, 128, 0.15);
+    --color-gray-5: rgba(128, 128, 128, 0.05);
+    --color-bg-gray: rgba(215, 215, 218, 1);
+    --color-bg-gray2: rgba(177, 177, 178, 1);
+
+    /* Background Colors */
+    --color-bg-main: rgba(231, 231, 233, 1);         /* Main background */
+    --color-bg-alt: rgba(228, 228, 230, 1);          /* Alternative background */
+    --color-bg-opposite: rgba(23, 23, 25, 1);        /* Opposite background */
+    --color-bg-bar: rgba(216, 216, 218, 0.2);        /* Top/Side bars, etc. */
+    --color-bg-panel: rgba(243, 243, 243, 1);        /* Panel background */
+    --color-mask-1: rgba(0, 0, 0, 0.01);
+    --color-mask-10: rgba(0, 0, 0, 0.10);
+    --color-mask-35: rgba(0, 0, 0, 0.35);
+
+    /* Theme Colors (Blue/Green/Red/Yellow/Purple/Cyan/Gray/Orange) */
+    --color-blue-20: rgba(53, 115, 240, 0.2);
+    --color-green-20: rgba(95, 173, 101, 0.2);
+    --color-red-20: rgba(219, 92, 92, 0.2);
+    --color-yellow-20: rgba(255, 175, 15, 0.2);
+    --color-purple-20: rgba(131, 77, 240, 0.2);
+    --color-cyan-20: rgba(3, 155, 161, 0.2);
+    --color-gray-20: rgba(128, 128, 128, 0.2);
+    --color-orange-20: rgba(229, 109, 23, 0.2);
+
+    --color-blue-50: rgba(53, 115, 240, 0.5);
+    --color-green-50: rgba(32, 138, 60, 0.5);
+    --color-red-50: rgba(219, 59, 75, 0.5);
+    --color-yellow-50: rgba(255, 175, 15, 0.5);
+    --color-purple-50: rgba(131, 77, 240, 0.5);
+    --color-cyan-50: rgba(3, 155, 161, 0.5);
+    --color-gray-50: rgba(128, 128, 128, 0.5);
+    --color-orange-50: rgba(229, 109, 23, 0.5);
+
+    --color-blue-100: rgba(53, 115, 240, 1);
+    --color-green-100: rgba(32, 138, 60, 1);
+    --color-red-100: rgba(219, 59, 75, 1);
+    --color-yellow-100: rgba(255, 175, 15, 1);
+    --color-purple-100: rgba(131, 77, 240, 1);
+    --color-cyan-100: rgba(3, 155, 161, 1);
+    --color-gray-100: rgba(128, 128, 128, 1);
+    --color-orange-100: rgba(229, 109, 23, 1);
+
+    /* Font Colors */
+    --color-font: rgba(0, 0, 0, 0.5);
+    --color-font-title: rgba(0, 0, 0, 0.9);
+
+    /* Accent Colors */
+    /* Primary Accent: Blue series; Secondary Accent: Yellow series */
+    --color-accent-100: var(--color-yellow-100);
+    --color-accent-50: var(--color-yellow-50);
+    --color-accent-20: var(--color-yellow-20);
+
+    --color-vice-accent-100: var(--color-gray-100);
+    --color-vice-accent-50: var(--color-gray-50);
+    --color-vice-accent-20: var(--color-gray-20);
+}
+
+

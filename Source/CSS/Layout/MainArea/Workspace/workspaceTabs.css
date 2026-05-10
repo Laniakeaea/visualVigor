@@ -1,0 +1,115 @@
+/* =========================================
+   Workspace Tabs
+   ========================================= */
+
+/*
+ * Workspace Tabs Component
+ * File: workspaceTabs.css
+ * Purpose: Styles for the workspace tabs located in the panel title.
+ * Layout: Flexbox row with horizontal scrolling.
+ * Features: Active state, dirty indicator, close button, hover effects.
+ */
+
+.workspace__tabs {
+    flex: 1; /* Take remaining space in title bar */
+    min-width: 0; /* Allow shrinking */
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Prepare for potential future rows */
+    margin-left: 16px; /* Spacing from title text */
+    border-radius: 10px;
+}
+
+.workspace__tabs-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden; /* Prevent vertical scrolling during drag */
+    scrollbar-width: none; /* Firefox */
+    padding-bottom: 0; /* Removed extra padding to fit in 30px container */
+    align-items: center; /* Ensure items stay vertically aligned */
+    height: 100%; /* Ensure full height usage */
+}
+
+.workspace__tabs-scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.workspace__tab {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 10px; /* Rounded rectangle */
+    background: var(--color-gray-15); /* Default dark gray background */
+    color: var(--color-font);
+    cursor: pointer;
+    font-size: 14px; /* Adjusted to reasonable size for text */
+    user-select: none;
+    transition: transform .15s ease;
+}
+
+/* Hover State */
+.workspace__tab:hover { 
+    background: var(--color-gray-25); 
+}
+
+/* Active State: Highlight with theme color */
+.workspace__tab.active { 
+    background: var(--color-accent-20); /* e.g., Light yellow background */
+}
+
+.workspace__tab.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.workspace__tab-name {
+    font-family: var(--font-basic-family);
+    font-size: 16px;
+    color: var(--color-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Unsaved State Indicator (Dot) */
+.workspace__tab .workspace__tab-dirty {
+    display: inline-flex;
+    margin-right: 6px; /* Increased spacing since it's on the left */
+    font-weight: 600;
+    font-size: 10px; /* Reduced size */
+    font-style: normal; /* No italics */
+    line-height: 1;
+    color: var(--color-font); /* Ensure color matches */
+}
+
+/* Control visibility based on data-dirty attribute */
+.workspace__tab[data-dirty="false"] .workspace__tab-dirty { display:none !important; }
+.workspace__tab[data-dirty="true"] .workspace__tab-dirty { display:inline-flex; }
+
+/* Close Button */
+.workspace__tab .workspace__tab-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 24px;
+    font-style: normal; /* No italics */
+    transition: color 0.2s;
+}
+
+/* Close Button Hover Red */
+.workspace__tab .workspace__tab-close:hover { 
+    color: var(--color-red-100); 
+}

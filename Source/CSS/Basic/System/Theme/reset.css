@@ -1,0 +1,30 @@
+/* =========================================
+   Global Reset
+   ========================================= */
+
+/*
+ * Global Focus Reset
+ * Purpose: Removes default outline and box-shadow from interactive elements across the entire application.
+ * Scope: Applies globally, not just to the title bar.
+ */
+button,
+button:focus,
+button:focus-visible,
+input,
+input:focus,
+input:focus-visible,
+textarea,
+textarea:focus,
+textarea:focus-visible,
+select,
+select:focus,
+select:focus-visible,
+a,
+a:focus,
+a:focus-visible,
+[role="button"],
+[role="button"]:focus,
+[role="button"]:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}

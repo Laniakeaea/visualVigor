@@ -1,0 +1,204 @@
+/* =========================================
+   Menu Bar Layout
+   ========================================= */
+
+/*
+ * Menu Bar Component
+ * Purpose: Provides a three-column layout (Left/Center/Right) for the top menu area and common button styles.
+ * Dependencies: Theme color variables (e.g., --color-gray-25 / --color-gray-35) from theme.css.
+ * Dimensions: Overall height 50px; Common button base size 30x30; Circle button diameter 30px; Capsule button horizontal padding 15px.
+ * Interaction: Background color transition on hover; Global focus styles removed in theme.css.
+ * Naming: .menuLeftBar / .menuMidBar / .menuRightBar (three columns); .menuBtn (common button); .capsule-btn / .circle-btn (button variants).
+ */
+
+/* Top Menu Bar Container */
+.menu-bar {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+/* HboxPanel */
+.menu-bar__container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+/* Three-Column Layout */
+.menu-bar__section--left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.menu-bar__section--center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1 1 auto;
+  padding: 0 10px 0 0;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 0;
+  
+  /* Hide Scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Prevent children from shrinking */
+.menu-bar__section--center > * {
+  flex-shrink: 0;
+}
+
+/* Separator when content exists */
+.menu-bar__section--center.has-content::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: var(--color-gray-35);
+  margin-right: 0;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.menu-bar__section--center::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-bar__section--right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+/* =========================================
+   Button Styles
+   ========================================= */
+
+/* 
+ * Only two button types retained: Capsule (.menu-bar__btn--capsule) and Circle (.menu-bar__btn--circle).
+ * Common base styles apply to both types.
+ */
+.menu-bar__btn--capsule,
+.menu-bar__btn--circle {
+  height: 30px;
+  min-width: 30px;
+  background: var(--color-gray-25);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--transition-theme), color var(--transition-theme);
+  font-size: 20px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* Capsule Button */
+.menu-bar__btn--capsule {
+  border-radius: 15px;
+  padding: 0 15px;
+  line-height: 1;
+  font-family: var(--font-basic-family);
+  font-weight: var(--font-basic-weight);
+  font-style: var(--font-basic-style);
+  font-size: 20px;
+  color: var(--color-font);
+  
+  /* Toggle Support */
+  position: relative;
+  transition: all var(--transition-theme);
+}
+
+.menu-bar__btn--capsule.active {
+  background: var(--color-gray-35);
+  padding-left: 35px; /* Space for checkmark */
+}
+
+.menu-bar__btn--capsule::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-font);
+  -webkit-mask-image: url('/Asset/Icon/Basic/System/Icons/check.svg');
+  mask-image: url('/Asset/Icon/Basic/System/Icons/check.svg');
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  opacity: 0;
+  transition: all var(--transition-theme);
+}
+
+.menu-bar__btn--capsule.active::before {
+  transform: translateY(-50%) scale(1);
+  opacity: 1;
+}
+
+/* Circle Button */
+.menu-bar__btn--circle {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  min-width: 0;
+}
+
+.menu-bar__btn--circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Hover Feedback */
+.menu-bar__btn--capsule:hover,
+.menu-bar__btn--circle:hover {
+  background: var(--color-gray-35);
+}
+
+
+/* =========================================
+   Toggle Styles (Menu Context)
+   ========================================= */
+
+.menu-bar__toggle {
+  /* Match Capsule Font */
+  font-family: var(--font-basic-family);
+  font-weight: var(--font-basic-weight);
+  font-style: var(--font-basic-style);
+  font-size: 20px;
+  color: var(--color-font);
+  
+  height: 30px;
+  margin: 0; /* Reset */
+}
+
+.menu-bar__toggle:hover span {
+  /* Override Default Toggle Color Shift */
+  color: var(--color-font);
+}

@@ -1,0 +1,86 @@
+/* =========================================
+   Input Field Component
+   ========================================= */
+
+/*
+ * Input Field Component
+ * File: inputField.css
+ * Purpose: Standard text inputs and value displays.
+ * Layout: Flexbox containers.
+ * Features: Read-only display, editable inputs, focus states.
+ */
+
+/* Base Input Style */
+.text-input {
+    height: 30px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--color-gray-25);
+    background: transparent;
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: 18px;
+    color: var(--color-font);
+    outline: none;
+    text-align: center;
+    line-height: 22px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+/* Editable Input */
+.text-input--field {
+    width: 100%;
+    flex: 1;
+}
+
+.text-input--field:focus {
+    border-color: var(--color-accent-50);
+}
+
+.text-input--field:hover {
+    border-color: var(--color-accent-20);
+}
+
+.text-input--field[type="number"] {
+    -moz-appearance: textfield; /* Hide Firefox spin buttons */
+}
+
+.text-input--field::-webkit-inner-spin-button,
+.text-input--field::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Read-only Value Display */
+.text-input--value {
+    min-width: 50px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.text-input--value[data-editable="true"] {
+    cursor: text;
+}
+
+.text-input--value[data-editable="true"]:hover {
+    background-color: color-mix(in srgb, var(--color-accent-100) 6%, transparent);
+}
+
+/* Full Width Modifier */
+.text-input--full {
+    width: 100%;
+    display: flex;
+}
+
+/* Input Group */
+.text-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}

@@ -1,0 +1,34 @@
+/* =========================================
+   Workspace Rulers
+   ========================================= */
+
+/*
+ * Workspace Rulers Component
+ * File: workspaceRuler.css
+ * Purpose: Styles for the horizontal and vertical rulers.
+ * Layout: Fixed width/height bars.
+ * Features: Theme compatibility.
+ */
+
+/* Shared Ruler Styles */
+.workspace__ruler--horizontal,
+.workspace__ruler--vertical {
+    background-color: var(--color-gray-15); /* Reference .ruler_* */
+    border-radius: var(--ws-radius-inner); /* Reference .ruler_* */
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Horizontal Ruler */
+.workspace__ruler--horizontal {
+    flex: 1;
+    height: 100%;
+}
+
+/* Vertical Ruler */
+.workspace__ruler--vertical {
+    width: var(--ws-ruler-size); /* Reference .ruler_left */
+    height: 100%;
+}

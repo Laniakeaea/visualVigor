@@ -1,0 +1,123 @@
+/* =========================================
+   Drag Line Component
+   ========================================= */
+
+/*
+ * Drag Line Styles
+ * Purpose: Defines the draggable divider component between panels.
+ * Layout: Vertical and Horizontal splitters.
+ * Features: Visual indicators, hover/active states, theme compatibility.
+ * Optimization: Unified styles using shared selectors and variables.
+ */
+
+:root {
+  --dragline-width: 2px;      /* Thin line width */
+  --dragline-bold-width: 4px; /* Bold line width (hover/active) */
+  --dragline-hit-size: 10px;  /* Interaction area size */
+}
+
+/* =========================================
+   Shared Base Styles
+   ========================================= */
+
+.drag-line {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  /* Visuals */
+  background: transparent;
+  border-radius: 5px;
+  z-index: 50;
+  transition: all var(--transition-theme);
+  
+  /* Interaction */
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Shared Indicator Styles */
+.drag-line::before {
+  content: '';
+  position: absolute;
+  background: transparent; /* Default invisible */
+  transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+  border-radius: 1px;
+}
+
+/* =========================================
+   Orientation Specifics
+   ========================================= */
+
+/* Vertical Splitter */
+.drag-line--vertical {
+  width: var(--dragline-hit-size);
+  height: 100%;
+  cursor: ew-resize;
+  flex: 0 0 var(--dragline-hit-size);
+}
+
+.drag-line--vertical::before {
+  width: var(--dragline-width);
+  top: 10px;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Horizontal Splitter */
+.drag-line--horizontal {
+  width: 100%;
+  height: var(--dragline-hit-size);
+  cursor: ns-resize;
+  flex: 0 0 var(--dragline-hit-size);
+}
+
+.drag-line--horizontal::before {
+  height: var(--dragline-width);
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* =========================================
+   Interaction States
+   ========================================= */
+
+/* Hover State */
+.drag-line:hover::before {
+  background: var(--color-gray-35);
+}
+
+/* Active/Dragging State */
+.drag-line:active::before,
+.drag-line.drag-line--dragging::before {
+  background: var(--color-green-50);
+  border-radius: 2px;
+}
+
+/* Active Dimensions */
+.drag-line--vertical:active::before,
+.drag-line--vertical.drag-line--dragging::before {
+  width: var(--dragline-bold-width);
+}
+
+.drag-line--horizontal:active::before,
+.drag-line--horizontal.drag-line--dragging::before {
+  height: var(--dragline-bold-width);
+}
+
+/* Disabled State */
+.drag-line.drag-line--disabled {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Limit Reached State */
+.drag-line.drag-line--at-limit::before {
+  background: var(--color-red-100) !important;
+}

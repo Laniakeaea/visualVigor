@@ -1,0 +1,114 @@
+/* =========================================
+   Font Definitions & Variables
+   ========================================= */
+
+/*
+ * Font Face Declarations
+ * Purpose: Import and define custom fonts for the application.
+ * Fonts: HarmonyOS Sans (Condensed), Ubuntu Nerd Font.
+ */
+
+/* --- HarmonyOS Sans Condensed --- */
+
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/Asset/Font/Basic/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/Asset/Font/Basic/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/Asset/Font/Basic/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HarmonyOS Sans';
+    src: url('/Asset/Font/Basic/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* --- Ubuntu Nerd Font --- */
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/Asset/Font/Basic/Ubuntu/UbuntuNerdFont-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/Asset/Font/Basic/Ubuntu/UbuntuNerdFont-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/Asset/Font/Basic/Ubuntu/UbuntuNerdFont-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/Asset/Font/Basic/Ubuntu/UbuntuNerdFont-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* =========================================
+   Global Font Variables
+   ========================================= */
+
+:root {
+    /* Base Font Families */
+    --font-family-harmony: 'HarmonyOS Sans';
+    --font-family-ubuntu: 'Ubuntu';
+
+    /* 
+     * Default / English Settings 
+     * Uses Ubuntu Nerd Font (mapped to --font-family-ubuntu)
+     */
+    --font-basic-family: var(--font-family-ubuntu);
+    --font-basic-weight: 700; /* bold */
+    --font-basic-style: italic;
+    --font-basic-size: 14px;
+}
+
+/* =========================================
+   Language Overrides
+   ========================================= */
+
+/* 
+ * Chinese (Simplified) Overrides
+ * Uses HarmonyOS Sans (mapped to --font-family-harmony)
+ * Applies when class .Language-simple-chinese is present or lang="zh"
+ */
+.Language-simple-chinese,
+:root:lang(zh),
+:root:lang(zh-CN) {
+    --font-basic-family: var(--font-family-harmony);
+    --font-basic-weight: 700;
+    --font-basic-style: italic;
+    --font-basic-size: 14px;
+}
+
+/* Apply Basic Font Globally */
+body {
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: var(--font-basic-size);
+}

@@ -1,0 +1,507 @@
+{
+    "Loop": "循环播放",
+    "No Loop": "不循环",
+    "Play": "播放",
+    "Pause": "暂停",
+    "Basic": {
+        "System": {
+        }
+    },
+    "Popup": {
+        "Dialog": {
+            "NewProject": {
+                "Title": "新建项目",
+                "Name": "项目名称",
+                "NamePlaceholder": "项目名称",
+                "Width": "宽度 (px)",
+                "Height": "高度 (px)",
+                "KeepRatio": "保持比例",
+                "Duration": "时长 (帧)",
+                "Background": "背景颜色",
+                "BgNone": "透明",
+                "BgBlack": "黑色",
+                "BgWhite": "白色",
+                "SaveImmediately": "立即保存",
+                "SelectFolder": "选择文件夹...",
+                "Browse": "浏览",
+                "Cancel": "取消",
+                "Create": "创建",
+                "ErrorPathRequired": "请选择有效的文件夹路径。",
+                "Finish": "完成"
+            },
+            "Common": {
+                "Confirm": "确认",
+                "Cancel": "取消",
+                "Delete": "删除",
+                "Next": "下一步",
+                "Skip": "跳过",
+                "UnsavedTitle": "未保存的更改",
+                "UnsavedMessage": "当前项目有未保存的更改，要在关闭前保存吗？"
+            }
+        }
+    },
+    "Layout": {
+        "MenuBar": {
+            "file": "文件",
+            "edit": "编辑",
+            "view": "视图",
+            "help": "帮助",
+            "Language": "语言",
+            "Theme": "主题",
+            "Settings": "设置",
+            "AutoSave": "自动保存",
+            "FileMenu": {
+                "New": "新建",
+                "Open": "打开",
+                "Save": "保存",
+                "SaveAs": "另存为",
+                "Export": "导出"
+            },
+            "EditMenu": {
+                "Undo": "撤销",
+                "Redo": "重做"
+            },
+            "select": "选择",
+            "SelectMenu": {
+                "Invert": "反选",
+                "Deselect": "取消选择"
+            },
+            "ViewMenu": {
+                "LeftSidePanel": "左侧面板",
+                "RightSidePanel": "右侧面板",
+                "DualView": "双视图",
+                "BottomSidePanel": "底部面板"
+            },
+            "HelpMenu": {
+                "SoftwareInfo": "软件说明",
+                "Shortcuts": "快捷键",
+                "JSPluginGuide": "JS 插件开发指南",
+                "CppPluginGuide": "C++ 插件开发指南"
+            }
+        },
+        "InfoBar": {
+            "InfoState": {
+                "ready": "就绪",
+                "error": "错误",
+                "warning": "警告",
+                "info": "信息",
+                "success": "成功",
+                "loading": "加载中"
+            },
+            "InfoContent": {
+                "AutoSaveEnabled": "自动保存已启用",
+                "AutoSaveDisabled": "自动保存已禁用",
+                "scriptRunning": "脚本运行中...",
+                "scriptFailed": "脚本执行失败",
+                "scriptCompleted": "脚本执行完成",
+                "scriptAddedVectors": "已添加矢量元素: ",
+                "noActiveProject": "未找到活动项目。",
+                "selectBitmapLayer": "请选择一个位图图层。",
+                "compiling": "编译中...",
+                "compileSuccess": "编译成功",
+                "compileFailed": "编译失败",
+                "messageCopied": "消息已复制到剪贴板",
+                "copyFailed": "复制消息失败",
+                "themeSwitchedToDark": "已切换至深色主题",
+                "themeSwitchedToLight": "已切换至浅色主题",
+                "dualViewEnabled": "双视图已启用",
+                "dualViewDisabled": "双视图已禁用",
+                "leftPanelShown": "左侧面板已显示",
+                "leftPanelHidden": "左侧面板已隐藏",
+                "rightPanelShown": "右侧面板已显示",
+                "rightPanelHidden": "右侧面板已隐藏",
+                "bottomPanelShown": "底部面板已显示",
+                "bottomPanelHidden": "底部面板已隐藏",
+                "viewCoupled": "视图已耦合",
+                "viewDecoupled": "视图已解耦",
+                "toolSelected": "已选择: ",
+                "layerCopied": "图层已复制到剪贴板。",
+                "layerCannotCopy": "此图层无法复制。",
+                "layerCannotDelete": "此图层无法删除。",
+                "noLayerSelected": "未选择图层",
+                "layerNotBitmap": "选择的图层不是位图图层",
+                "noActiveBitmapLayer": "未选择活动的位图图层",
+                "selectionInverted": "反选",
+                "deselected": "取消选择",
+                "undoPerformed": "撤销",
+                "redoPerformed": "重做",
+                "nothingToUndo": "没有可撤销的操作",
+                "nothingToRedo": "没有可重做的操作",
+                "groupCreated": "编组已创建",
+                "ungrouped": "编组已取消"
+            }
+        },
+        "MainArea": {
+            "PanelUni": {
+                "left": "左侧面板",
+                "workspace": "工作区",
+                "bottom": "底部面板",
+                "right": "右侧面板"
+            },
+            "Workspace": {
+                "FitToScreen": "适应屏幕"
+            },
+            "ToolBar": {
+                "LeftToolBar": {
+                    "Bitmap": {
+                        "Pencil": "铅笔",
+                        "Marker": "马克笔",
+                        "Eraser": "橡皮擦",
+                        "Dropper": "吸管",
+                        "MagicStick": "魔棒",
+                        "Filling": "填充",
+                        "Select": "选择",
+                        "Image": "图像",
+                        "Gradient": "渐变",
+                        "Clone": "克隆",
+                        "Blur": "模糊",
+                        "Sharpen": "锐化",
+                        "Desaturate": "去色",
+                        "Shape": "形状",
+                        "Pinch": "挤压",
+                        "Crop": "裁剪"
+                    },
+                    "View": {
+                        "Animation": "动画",
+                        "DualView": "双视图"
+                    }
+                },
+                "RightToolBar": {
+                    "Vector": {
+                        "Select": "选择",
+                        "FreePath": "自由路径",
+                        "Line": "直线",
+                        "Curve": "曲线",
+                        "Rectangle": "矩形",
+                        "Ellipse": "椭圆",
+                        "Polygon": "多边形",
+                        "FreeForm": "自由形状",
+                        "Text": "文本",
+                        "Group": "编组"
+                    },
+                    "Custom": {
+                        "Add": "添加插件"
+                    },
+                    "View": {
+                        "Animation": "动画",
+                        "DualView": "双视图"
+                    }
+                },
+                "TopToolBar": {
+                    "Adjust": {
+                        "Brightness": "亮度",
+                        "ColorCurve": "色彩曲线",
+                        "Temperature": "色温",
+                        "Contrast": "对比度",
+                        "Exposure": "曝光",
+                        "ToolBox": "工具箱",
+                        "Script": "JS 脚本",
+                        "CPPScript": "C++ 脚本",
+                        "WASMScript": "WASM 脚本"
+                    },
+                    "Assist": {
+                        "Grid": "网格",
+                        "Indicator": "指示器",
+                        "Snap": "吸附",
+                        "MousePos": "鼠标位置",
+                        "SyncView": "同步视图"
+                    }
+                }
+            }
+        },
+        "Panel": {
+            "CustomPlugin": {
+                "Title": "管理自定义插件",
+                "AddPlugin": "添加插件",
+                "Close": "关闭",
+                "Remove": "移除",
+                "ConfirmRemove": "确定移除插件“{name}”吗？",
+                "Name": "插件名称",
+                "NamePlaceholder": "请输入插件名称",
+                "ScriptFile": "脚本文件 (.wasm)",
+                "IconFile": "图标 (SVG 100x100)",
+                "Browse": "浏览",
+                "NoFile": "未选择文件",
+                "Preview": "预览",
+                "NoIcon": "未选择图标",
+                "InvalidIcon": "图标必须是 100x100 像素的 SVG",
+                "InvalidImage": "无效的图片文件",
+                "EnterName": "请输入插件名称",
+                "SelectScript": "请选择脚本文件",
+                "SuccessAdded": "插件“{name}”已添加！",
+                "SuccessRemoved": "插件“{name}”已移除",
+                "StorageLimit": "保存插件失败：存储空间不足。",
+                "ExecutionFailed": "插件执行失败：{error}",
+                "NoPlugins": "未安装自定义插件。"
+            },
+            "Preview": "预览",
+            "ColorPalette": "调色板",
+            "Layers": {
+                "Title": "图层",
+                "NoLayers": "无图层"
+            },
+            "Elements": {
+                "Title": "元素",
+                "Search": "搜索元素...",
+                "NoElements": "无元素"
+            },
+            "Export": {
+                "Title": "保存 / 导出",
+                "SelectFormats": "选择导出格式：",
+                "vif": "VisualVigor 工程文件 (*.vif)",
+                "png": "PNG 图片 (*.png)",
+                "jpg": "JPEG 图片 (*.jpg)",
+                "bmp": "BMP 图片 (*.bmp)",
+                "tif": "TIFF 图片 (*.tif)",
+                "gif": "GIF 动画 (*.gif)",
+                "svg": "SVG 矢量图 (*.svg)",
+                "Cancel": "取消",
+                "Confirm": "确认"
+            },
+            "ToolOptions": {
+                "Title": "工具选项",
+                "NoTool": "无活动工具",
+                "NoOptions": "无可用选项"
+            },
+            "Animation": {
+                "Control": {
+                    "ShowAllLayers": "显示所有图层",
+                    "ShowVisibleOnly": "仅显示可见图层",
+                    "GoToStart": "回到起点",
+                    "PreviousFrame": "上一帧",
+                    "Play": "播放",
+                    "Pause": "暂停",
+                    "NextFrame": "下一帧",
+                    "GoToEnd": "跳到终点",
+                    "Loop": "循环播放",
+                    "NoLoop": "不循环",
+                    "PlaybackSpeed": "播放速度"
+                }
+            }
+        }
+    },
+    "Tool": {
+        "Options": {
+            "apply": "应用到图层",
+            "advancedMode": "高级模式",
+            "size": "大小",
+            "sampleSize": "采样大小",
+            "sampleAllLayers": "全图层采样",
+            "isCircular": "圆形采样",
+            "includeAlpha": "包含透明度",
+            "tolerance": "容差",
+            "contiguous": "连续",
+            "antiAlias": "抗锯齿",
+            "thinning": "笔锋",
+            "smoothing": "平滑",
+            "streamline": "流线",
+            "shape": "形状",
+            "mode": "模式",
+            "rectangle": "矩形",
+            "ellipse": "椭圆",
+            "polygon": "多边形",
+            "sides": "边数",
+            "angle": "角度",
+            "new": "新选区",
+            "add": "添加到选区",
+            "subtract": "从选区减去",
+            "intersect": "与选区交叉",
+            "mode_pinch": "挤压",
+            "mode_bulge": "膨胀",
+            "mode_new": "新",
+            "mode_add": "加",
+            "mode_subtract": "减",
+            "mode_intersect": "交",
+            "mode_transform": "调整",
+            "mode_node": "节点",
+            "mode_freehand": "自由手绘",
+            "mode_polyline": "折线",
+            "mode_none": "无",
+            "mode_binary": "二值化",
+            "mode_edge": "边缘检测",
+            "keepRatio": "保持比例",
+            "type": "类型",
+            "linear": "线性",
+            "radial": "径向",
+            "reverse": "反向",
+            "colors": "渐变颜色",
+            "Gradient": {
+                "Start": "起点",
+                "End": "终点"
+            },
+            "aligned": "对齐",
+            "strength": "强度",
+            "preserveTransparency": "保留透明度",
+            "fill": "填充",
+            "stroke": "描边",
+            "freehand": "自由手绘",
+            "polyline": "折线",
+            "EditColor": "编辑颜色",
+            "EditingColor": "正在编辑颜色...",
+            "NoneClickToAdd": "无 (点击添加)",
+            "opacity": "不透明度",
+            "brightness": "亮度",
+            "contrast": "对比度",
+            "exposure": "曝光",
+            "temperature": "色温",
+            "gamma": "伽马",
+            "red": "红色",
+            "green": "绿色",
+            "blue": "蓝色",
+            "strokeWidth": "描边宽度",
+            "threshold": "阈值",
+            "curve": "曲线调节"
+        },
+        "Clone": {
+            "SourceSet": "仿制源已设定",
+            "SetSourceHint": "按住Alt点击以设定源点"
+        }
+    },
+    "HelpMenu": {
+        "Tutorial": {
+            "Welcome": {
+                "Title": "欢迎使用 VisualVigor",
+                "Message": "让我们深入了解界面功能布局。"
+            },
+            "MenuBarLeft": {
+                "Title": "菜单栏（操作）",
+                "Message": "访问核心的文件操作、编辑历史、选择命令和视图设置。"
+            },
+            "MenuBarRight": {
+                "Title": "菜单栏（系统）",
+                "Message": "切换主题、更改语言或查看帮助文档。"
+            },
+            "LeftToolBarBitmap": {
+                "Title": "位图工具",
+                "Message": "包含画笔、橡皮擦、魔棒、渐变填充等光栅编辑工具。"
+            },
+            "LeftToolBarView": {
+                "Title": "视图控制",
+                "Message": "切换底部动画时间轴或启用双视图模式。"
+            },
+            "TopToolBarAdjust": {
+                "Title": "图像调整",
+                "Message": "快速调整亮度、对比度、曝光，或运行自动化脚本。"
+            },
+            "TopToolBarAssist": {
+                "Title": "视图辅助",
+                "Message": "切换网格、吸附功能、指示器及鼠标位置追踪。"
+            },
+            "Workspace": {
+                "Title": "工作区",
+                "Message": "主要画布区域，支持无限滚动和缩放操作。"
+            },
+            "RightToolBarVector": {
+                "Title": "矢量工具",
+                "Message": "创建可缩放路径。包含选择、钢笔、各类形状及文本工具。"
+            },
+            "LeftPanel": {
+                "Title": "属性面板",
+                "Message": "调整当前选中工具或图层对象的详细参数。"
+            },
+            "RightPanel": {
+                "Title": "图层面板",
+                "Message": "管理图层层级、可视性及混合模式。"
+            },
+            "AnimationPanel": {
+                "Title": "动画面板",
+                "Message": "时间轴与关键帧控制（可通过左侧工具栏底部按钮切换显示）。"
+            },
+            "InfoBar": {
+                "Title": "信息栏",
+                "Message": "显示系统状态及操作结果。点击消息可复制到剪贴板。"
+            }
+        },
+        "Shortcuts": {
+            "Title": "键盘快捷键",
+            "GroupCommon": "通用",
+            "GroupGeneral": "通用",
+            "GroupToolsBitmap": "位图工具",
+            "GroupToolsVector": "矢量工具",
+            "GroupView": "视图导航",
+            "GroupEdit": "编辑操作",
+            "New": "新建文件",
+            "Open": "打开...",
+            "Save": "保存",
+            "Undo": "撤销",
+            "Redo": "重做",
+            "Group": "编组",
+            "Ungroup": "取消编组",
+            "ZoomIn": "放大",
+            "ZoomOut": "缩小",
+            "Fit": "适应屏幕",
+            "Ctrl": "Ctrl",
+            "Shift": "Shift",
+            "Alt": "Alt",
+            "Space": "空格键"
+        },
+        "PluginGuide": {
+            "Title": "JS 插件开发指南",
+            "Subtitle": "使用 JavaScript 扩展图像处理能力",
+            "DownloadDemos": "下载示例脚本",
+            "IntroTitle": "简介",
+            "IntroText": "VisualVigor 支持加载外部脚本以直接操作像素数据。插件是导出特定函数的简单 .js 文件。",
+            "StructureTitle": "基本结构",
+            "StructureText": "创建一个 .js 文件并导出 'apply' 函数：",
+            "VectorTitle": "生成矢量对象",
+            "VectorText": "您也可以通过返回带 'vectors' 数组的对象来生成矢量形状。"
+        },
+        "CppPluginGuide": {
+            "Title": "C++ 高性能插件指南",
+            "Subtitle": "使用 C++ (WebAssembly) 扩展能力",
+            "DownloadDemos": "下载 C++ 示例",
+            "IntroTitle": "简介",
+            "IntroText": "VisualVigor 允许您使用 C++ 编写高性能图像处理算法。这些脚本会在浏览器中实时编译为 WebAssembly。",
+            "StructureTitle": "基本结构",
+            "StructureText": "插件文件必须具有 .cpp 或 .c 扩展名，并导出 'applyFilter' 函数（extern \"C\"）。注意：不支持标准库 (std::)。",
+            "AdvancedTitle": "高级处理",
+            "AdvancedText": "您可以实现复杂的算法，如卷积或浮点数学运算（例如 Sepia、Mandelbrot）。",
+            "WasmTitle": "WebAssembly 模块 (.wasm)",
+            "WasmText": "您也可以直接加载预编译的 .wasm 文件（类似于加载 DLL）。这对于分发闭源插件或跳过编译步骤非常有用。",
+            "GenerateWasm": "生成测试 .wasm (反转红色)",
+            "Compiling": "正在编译... (可能需要一分钟)",
+            "CompileSuccess": "编译成功！开始下载",
+            "CompileError": "错误: "
+        }
+    },
+    "Collaboration": {
+        "Status": {
+            "Online": "在线",
+            "Offline": "离线",
+            "Connecting": "连接中..."
+        },
+        "Dialog": {
+            "Title": "协作编辑",
+            "CreateRoom": "创建房间",
+            "JoinRoom": "加入房间",
+            "YourName": "你的名字",
+            "ServerURL": "服务器地址",
+            "RoomCode": "房间代码",
+            "Create": "创建房间",
+            "Join": "加入房间",
+            "Leave": "离开房间",
+            "Or": "或",
+            "ConnectedUsers": "已连接用户",
+            "Copy": "复制",
+            "Commit": "提交更改",
+            "Accept": "接受更改"
+        },
+        "UserList": {
+            "Title": "用户"
+        },
+        "NoActiveProject": "请先打开一个项目再开始协作",
+        "Connected": "已连接到协作房间",
+        "Disconnected": "已断开协作连接",
+        "ConnectionError": "无法连接到协作服务器",
+        "EnterName": "请输入你的名字",
+        "EnterRoomCode": "请输入房间代码",
+        "InvalidServerURL": "无效的服务器地址 (请使用 ws:// 或 wss://)",
+        "RoomCodeCopied": "房间代码已复制到剪贴板",
+        "LayerLockedBy": "图层已被锁定，锁定者：",
+        "CommitSent": "更改已提交",
+        "CommitEmpty": "没有可提交的更改",
+        "AcceptedChanges": "已接受更改",
+        "NoIncomingChanges": "没有待接受的更改",
+        "IncomingCount": "待接受：{0}"
+    }
+}

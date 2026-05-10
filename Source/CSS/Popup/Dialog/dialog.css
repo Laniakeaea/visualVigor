@@ -1,0 +1,218 @@
+/* =========================================
+   Dialog Popup
+   ========================================= */
+
+/* Container for centering */
+.dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.dialog-container.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Mask (Overlay) */
+.dialog-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Blur Effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 0;
+}
+
+/* Mask Color Tint */
+.dialog-mask::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-opposite);
+    opacity: 0.1;
+}
+
+/* Dialog Window (Matches Panel Style - unifiedWindow.css) */
+.dialog-window {
+    position: relative;
+    z-index: 1;
+    /* Panel Base Style */
+    background: var(--color-bg-gray); /* Updated to match unifiedWindow.css */
+    border-radius: 20px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--color-gray-15); /* Added border */
+    
+    /* Font Properties */
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    
+    /* Popup specific */
+    min-width: 400px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: hidden;
+}
+
+/* Dialog Header */
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.dialog-title {
+    /* Matches .layout-panel__title-label */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    line-height: 30px;
+    font-family: var(--font-basic-family);
+    font-size: 24px; /* Matches panel title size */
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    color: var(--color-font);
+    margin: 0;
+    padding: 0;
+}
+
+/* Dialog Body */
+.dialog-body {
+    /* Matches .uic-window__content */
+    flex: 1 1 auto;
+    background: var(--color-bg-main);
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    position: relative;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--color-font);
+    font-size: 18px;
+    
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.dialog-body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Dialog Footer */
+.dialog-footer {
+    /* Matches .uic-window__footer */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0 10px;
+    padding-top: 0;
+}
+
+/* Standard Button Base */
+.dialog-btn {
+    padding: 5px 15px; /* Matches standardButton.css */
+    border: none;
+    border-radius: 10px; /* Matches standardButton.css */
+    font-size: 20px; /* Matches standardButton.css */
+    font-family: var(--font-basic-family); /* Matches standardButton.css */
+    font-weight: var(--font-basic-weight); /* Matches standardButton.css */
+    font-style: var(--font-basic-style); /* Matches standardButton.css */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-font);
+}
+
+/* 1. Normal 1 (Standard) - Gray Background */
+.dialog-btn.is-normal {
+    background: var(--color-gray-15);
+}
+.dialog-btn.is-normal:hover {
+    background: var(--color-gray-25);
+    color: var(--color-gray-100);
+    transform: translateY(-1px);
+}
+
+/* 2. Normal 2 (Ghost) - Transparent/Border */
+.dialog-btn.is-ghost {
+    background: transparent;
+    border: 1px solid var(--color-gray-15);
+}
+.dialog-btn.is-ghost:hover {
+    border-color: var(--color-gray-35);
+    color: var(--color-gray-100);
+    transform: translateY(-1px);
+}
+
+/* 3. Recommended (Primary) - Accent */
+.dialog-btn.is-recommend {
+    background: var(--color-accent-20);
+}
+.dialog-btn.is-recommend:hover {
+    color: var(--color-accent-100);
+    transform: translateY(-1px);
+}
+
+/* 4. Warning - Orange */
+.dialog-btn.is-warning {
+    background: var(--color-orange-20);
+}
+.dialog-btn.is-warning:hover {
+    color: var(--color-orange-100);
+    transform: translateY(-1px);
+}
+
+/* 5. Dangerous - Red */
+.dialog-btn.is-danger {
+    background: var(--color-red-20);
+}
+.dialog-btn.is-danger:hover {
+    color: var(--color-red-100);
+    transform: translateY(-1px);
+}
+
+/* Active State */
+.dialog-btn:active {
+    transform: translateY(0);
+}
+
+/* Disabled State */
+.dialog-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    pointer-events: none;
+}

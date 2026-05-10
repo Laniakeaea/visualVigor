@@ -1,0 +1,48 @@
+/* =========================================
+   Workspace Header
+   ========================================= */
+
+/*
+ * Workspace Header Component
+ * File: workspaceHeader.css
+ * Purpose: Styles for the workspace header area containing controls.
+ * Layout: Flexbox row.
+ * Features: Fit-to-screen button styling.
+ */
+
+.workspace__header {
+    display: flex;
+    flex-direction: row;
+    height: var(--ws-ruler-size); /* Reference ruler height */
+    width: 100%;
+    background-color: transparent;
+    flex-shrink: 0;
+    z-index: 10;
+    gap: var(--ws-gap); /* Gap between button and ruler */
+}
+
+/* Fit To Screen Button (Top-Left Corner) */
+.workspace__fit-btn {
+    width: var(--ws-ruler-size); /* Reference #boardFitButton */
+    height: var(--ws-ruler-size); /* Reference #boardFitButton */
+    background-color: var(--color-accent-20); /* Reference #boardFitButton */
+    border: none;
+    border-radius: var(--ws-radius-inner); /* Reference #boardFitButton */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    flex-shrink: 0;
+    color: var(--color-font);
+    transition: background 0.15s, transform 0.1s;
+}
+
+.workspace__fit-btn:hover {
+    background-color: var(--color-accent-50);
+}
+
+.workspace__fit-btn:active {
+    transform: translateY(2px);
+    background-color: var(--color-accent-100);
+}

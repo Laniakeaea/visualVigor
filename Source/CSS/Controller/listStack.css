@@ -1,0 +1,272 @@
+/* =========================================
+   Layer List (ListStackCombo Style)
+   ========================================= */
+
+.layer-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 10px; /* Spacing from Group Title */
+}
+
+.liststack-combo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- Header Toolbar --- */
+.liststack__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 5px;
+    flex-shrink: 0;
+}
+
+.liststack__group {
+    display: flex;
+    gap: 5px;
+}
+
+.liststack__btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--color-font);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 16px; /* For text icons */
+    padding: 0;
+}
+
+.liststack__btn:hover {
+    background-color: var(--color-mask-10);
+    color: var(--color-accent-100);
+}
+
+.liststack__btn:active {
+    background-color: var(--color-mask-35);
+}
+
+/* --- Body & Tray --- */
+.liststack__body {
+    flex: 1;
+    overflow: hidden; /* Contain scroll */
+    display: flex;
+    flex-direction: column;
+}
+
+.liststack__tray {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    overflow-y: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.liststack__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* --- Layer Item --- */
+.layer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+/* Selection Mark */
+.layer-item::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: var(--color-gray-25);
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.layer-item--active::before {
+    background-color: var(--color-accent-100);
+}
+
+/* Drag and Drop States */
+.layer-item.dragging {
+    opacity: 0.5;
+    background: var(--color-mask-10);
+}
+
+.layer-item.drop-target-top {
+    border-top: 2px solid var(--color-accent-100);
+}
+
+.layer-item.drop-target-bottom {
+    border-bottom: 2px solid var(--color-accent-100);
+}
+
+/* Visibility Toggle */
+.layer-vis {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-font);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.layer-vis:hover {
+    background-color: var(--color-mask-10);
+}
+
+.layer-vis.hidden {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+/* Lock Toggle */
+.layer-lock {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-font);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.layer-lock:hover {
+    background-color: var(--color-mask-10);
+}
+
+.layer-lock.unlocked {
+    opacity: 0.3;
+    filter: grayscale(100%);
+}
+
+.layer-lock.unlocked:hover {
+    opacity: 0.8;
+}
+
+/* Delete Button */
+.list-delete {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--color-font);
+    transition: all 0.2s;
+    flex-shrink: 0;
+    margin-left: 5px;
+    opacity: 0; /* Hidden by default */
+}
+
+.layer-item:hover .list-delete,
+.element-item:hover .list-delete {
+    opacity: 1;
+    display: flex; /* Ensure it's displayed for element items too if they use display:none by default */
+}
+
+.list-delete:hover {
+    background-color: var(--color-mask-10);
+    color: var(--color-red-100);
+}
+
+/* Delete Confirmation */
+.list-delete-confirm {
+    display: flex;
+    gap: 5px;
+    margin-left: 5px;
+}
+
+.list-confirm-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background: transparent;
+    color: var(--color-font);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.list-confirm-btn:hover {
+    background-color: var(--color-mask-10);
+}
+
+.list-confirm-btn.danger {
+    color: var(--color-red-100);
+}
+
+.list-confirm-btn.danger:hover {
+    background-color: var(--color-mask-10);
+}
+
+.icon-small {
+    width: 18px;
+    height: 18px;
+}
+
+/* Layer Name (Input-like style) */
+.layer-name {
+    flex: 1;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border: 2px solid var(--color-gray-25);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--color-font);
+    background: transparent;
+    transition: border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.layer-item:hover .layer-name {
+    border-color: var(--color-accent-20);
+}
+
+.layer-item--active .layer-name {
+    border-color: var(--color-accent-50);
+    color: var(--color-accent-100);
+}

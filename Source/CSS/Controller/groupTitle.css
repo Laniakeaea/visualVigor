@@ -1,0 +1,48 @@
+/* =========================================
+   Group Title Style
+   ========================================= */
+
+.control-group__title {
+    font-size: 20px;
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    color: var(--color-font);
+    
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin: 0;
+    border-bottom: 1px solid var(--color-gray-25);
+    
+    display: flex;
+    align-items: center;
+    
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Left Decorative Bar */
+.control-group__title::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: var(--color-accent-50);
+    margin-right: 12px;
+    border-radius: 2px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Collapsed State */
+.control-group__title--collapsed::before {
+    transform: rotate(-90deg);
+    background: var(--color-gray-50);
+}
+
+/* Group Content */
+.control-group__content {
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}

@@ -1,0 +1,43 @@
+/* =========================================
+   ToolTip Style
+   ========================================= */
+
+/*
+ * ToolTip
+ * File: toolTip.css
+ * Purpose: Replaces the native browser tooltip with a styled version.
+ * Layout: Fixed position popup with arrow indicator.
+ * Features: Theme-aware colors, backdrop blur, auto-positioning.
+ */
+
+/* Tooltip Container */
+.tooltip {
+  position: fixed;
+  z-index: 2000;
+  /* Frosted Glass Effect */
+  background: var(--color-bg-gray);
+  color: var(--color-font);
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 2px solid var(--color-gray-25);
+  max-width: 320px;
+  font-family: inherit;
+  font-weight: var(--font-basic-weight);
+  font-style: var(--font-basic-style);
+  font-size: 18px; /* Adjusted for better readability */
+  line-height: 1.4;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+/* Visible State */
+.tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titlebar .tooltip { 
+    -webkit-app-region: no-drag; 
+}

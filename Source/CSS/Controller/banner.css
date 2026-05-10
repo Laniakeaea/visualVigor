@@ -1,0 +1,117 @@
+/* =========================================
+   Banner Component
+   ========================================= */
+
+/*
+ * Banner Component
+ * File: banner.css
+ * Purpose: Displays important alerts or information at the top of panels or groups.
+ * Layout: Grid layout with icon, content, and close button.
+ * Features: Info and Success variants, dismissible.
+ */
+
+.banner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 0px;
+    border-top: 1px solid var(--color-gray-25);
+    border-bottom: 1px solid var(--color-gray-25);
+    background: color-mix(in srgb, var(--color-gray-15) 30%, transparent);
+    box-sizing: border-box;
+    color: var(--color-font);
+}
+
+.banner__icon {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    font-size: 0;
+}
+
+.banner__content {
+    min-width: 0;
+}
+
+.banner__title {
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 0 0 2px 0;
+}
+
+.banner__desc {
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: 16px;
+    line-height: 1.3;
+    opacity: .9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.banner__close {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--color-font);
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Default Icon (D/L handled by theme or JS usually, but here hardcoded path from ref) */
+    /* Note: Paths might need adjustment based on actual project structure */
+    background-image: url('/Asset/Icon/Basic/System/closeD.svg'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    font-size: 0;
+}
+
+.banner__close:hover {
+    background-color: var(--color-gray-15);
+}
+
+.banner__close:focus {
+    outline: 2px solid var(--color-accent-50);
+    outline-offset: 2px;
+}
+
+/* Modifiers */
+
+.banner--info {
+    border-color: var(--color-blue-20);
+    background: color-mix(in srgb, var(--color-blue-100) 6%, transparent);
+}
+
+.banner--info .banner__icon {
+    background-color: var(--color-blue-100);
+    /* background-image: url(...); */
+}
+
+.banner--success {
+    border-color: var(--color-green-20);
+    background: color-mix(in srgb, var(--color-green-100) 6%, transparent);
+}
+
+.banner--success .banner__icon {
+    background-color: var(--color-green-100);
+    /* background-image: url(...); */
+}

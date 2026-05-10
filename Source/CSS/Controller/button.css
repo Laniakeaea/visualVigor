@@ -1,0 +1,85 @@
+/* =========================================
+   Button Component
+   ========================================= */
+
+/*
+ * Button Component
+ * File: button.css
+ * Purpose: Standard button styles for actions.
+ * Layout: Inline-block elements.
+ * Features: Primary, Secondary, and Danger variants.
+ */
+
+/* Base Button Style */
+.btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Primary Variant */
+.btn--primary {
+    background: var(--color-accent-20);
+    color: var(--color-font);
+}
+
+.btn--primary:hover {
+    color: var(--color-accent-100);
+    transform: translateY(-1px);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Variant */
+.btn--secondary {
+    background: var(--color-gray-15);
+    color: var(--color-font);
+}
+
+.btn--secondary:hover {
+    color: var(--color-accent-50);
+    transform: translateY(-1px);
+}
+
+.btn--secondary:active {
+    transform: translateY(0);
+}
+
+/* Danger Variant */
+.btn--danger {
+    background: var(--color-red-20);
+    color: var(--color-font);
+}
+
+.btn--danger:hover {
+    color: var(--color-red-100);
+    transform: translateY(-1px);
+}
+
+.btn--danger:active {
+    transform: translateY(0);
+}
+
+/* Disabled State */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}

@@ -1,0 +1,234 @@
+/* =========================================
+   ToolBar Layout
+   ========================================= */
+
+/*
+ * Unified ToolBar Base Styles
+ * Purpose: Centralizes common styles and interaction states for Horizontal/Vertical toolbars.
+ * Usage: Import this file before specific toolbar CSS in index.html.
+ * Optimization: Uses CSS variables for dimensions and grouped selectors for common utilities.
+ */
+
+/* =========================================
+   Variables & Configuration
+   ========================================= */
+
+:root {
+  /* Dimensions */
+  --toolbar-width-vertical: 60px;
+  --toolbar-height-horizontal: 60px;
+  --toolbar-padding: 10px;
+  --toolbar-gap: 10px;
+  
+  /* Appearance */
+  --toolbar-radius: 20px;
+  
+  /* Components */
+  --tool-btn-size: 40px;
+  --tool-btn-radius: 10px;
+  --tool-separator-length: 24px;
+  --tool-separator-thickness: 2px;
+}
+
+/* =========================================
+   Container: Horizontal/Vertical Common Base
+   ========================================= */
+
+.horizontalToolBar,
+.verticalToolBar {
+  background: var(--color-gray-15);
+  border-radius: var(--toolbar-radius);
+  display: flex;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  padding: var(--toolbar-padding);
+  box-sizing: border-box;
+  overflow: hidden; /* Clip content */
+  transition: background-color var(--transition-theme);
+}
+
+/* Horizontal layout */
+.horizontalToolBar {
+  width: 100%;
+  height: var(--toolbar-height-horizontal);
+  flex-direction: row;
+  flex: 0 0 var(--toolbar-height-horizontal);
+  margin: 0 0 10px 0;
+}
+
+/* Vertical layout */
+.verticalToolBar {
+  width: var(--toolbar-width-vertical);
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 var(--toolbar-width-vertical);
+}
+
+/* Spacing and side margins */
+.verticalToolBar.position-left { margin-right: 10px; }
+.verticalToolBar.position-right { margin-left: 10px; }
+
+/* =========================================
+   Internal Layout & Scrollbar Utilities
+   ========================================= */
+
+/* Common Scrollbar Hiding for all scrollable panels */
+.horizontalToolBarCenter,
+.horizontalToolBar_inner_panel,
+.verticalToolBar_top_panel,
+.verticalToolBar_bottom_panel {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE/Edge */
+}
+
+.horizontalToolBarCenter::-webkit-scrollbar,
+.horizontalToolBar_inner_panel::-webkit-scrollbar,
+.verticalToolBar_top_panel::-webkit-scrollbar,
+.verticalToolBar_bottom_panel::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari */
+}
+
+/* Horizontal ToolBar Internal */
+.horizontalToolBarLeft,
+.horizontalToolBarRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  flex: 0 0 auto;
+}
+
+.horizontalToolBarLeft { justify-content: flex-start; }
+.horizontalToolBarRight { margin-left: auto; justify-content: flex-end; }
+
+.horizontalToolBarCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.horizontalToolBar_inner_panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/* Vertical ToolBar Internal */
+.verticalToolBar_top_panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.verticalToolBar_bottom_panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  width: 100%;
+  flex: 0 0 auto;
+  height: auto;
+  margin-top: auto;
+}
+
+/* =========================================
+   Common Button Styles
+   ========================================= */
+
+.horizontalToolBar_button,
+.verticalToolBar_button {
+  flex: 0 0 auto;
+  width: var(--tool-btn-size);
+  height: var(--tool-btn-size);
+  padding: 0;
+  border: 1px solid transparent; /* Initialize with transparent border */
+  background: transparent;
+  color: var(--color-font); /* Ensure currentColor works for icons */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: var(--tool-btn-radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-theme), transform 0.1s, border-color var(--transition-theme);
+}
+
+.horizontalToolBar_button-img,
+.verticalToolBar_button-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Active / Focus / Toggle States */
+.horizontalToolBar_button--active,
+.verticalToolBar_button--active,
+.horizontalToolBar_button--focus,
+.verticalToolBar_button--focus,
+.horizontalToolBar_button--toggle-active,
+.verticalToolBar_button--toggle-active { 
+  border: 1px solid var(--color-accent-50);
+  background-color: var(--color-accent-20); 
+}
+
+/* Hover State */
+.horizontalToolBar_button:hover,
+.verticalToolBar_button:hover { 
+  border: 1px solid var(--color-accent-20); 
+}
+
+/* Active (Pressed) State */
+.horizontalToolBar_button:active,
+.verticalToolBar_button:active { 
+  transform: translateY(3px); 
+}
+
+/* =========================================
+   Separators
+   ========================================= */
+
+.horizontalToolBar_separator,
+.verticalToolBar_separator {
+  flex: 0 0 auto;
+  background-color: var(--color-font);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+/* Horizontal ToolBar: Vertical Separator */
+.horizontalToolBar_separator {
+  width: var(--tool-separator-thickness);
+  height: var(--tool-separator-length);
+  margin: 0 5px;
+}
+
+/* Vertical ToolBar: Horizontal Separator */
+.verticalToolBar_separator {
+  width: var(--tool-separator-length);
+  height: var(--tool-separator-thickness);
+  margin: 5px 0;
+}

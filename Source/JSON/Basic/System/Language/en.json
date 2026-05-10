@@ -1,0 +1,502 @@
+{
+    "Basic": {
+        "System": {
+        }
+    },
+    "Popup": {
+        "Dialog": {
+            "NewProject": {
+                "Title": "Create New Project",
+                "Name": "Project Name",
+                "NamePlaceholder": "Project Name",
+                "Width": "Width (px)",
+                "Height": "Height (px)",
+                "KeepRatio": "Keep Ratio",
+                "Duration": "Duration (Frames)",
+                "Background": "Background",
+                "BgNone": "None",
+                "BgBlack": "Black",
+                "BgWhite": "White",
+                "SaveImmediately": "Save Immediately",
+                "SelectFolder": "Select folder...",
+                "Browse": "Browse",
+                "Cancel": "Cancel",
+                "Create": "Create",
+                "ErrorPathRequired": "Please select a valid folder path.",
+                "Finish": "Finish"
+            },
+            "Common": {
+                "Confirm": "Confirm",
+                "Cancel": "Cancel",
+                "Delete": "Delete",
+                "Next": "Next",
+                "Skip": "Skip",
+                "UnsavedTitle": "Unsaved Changes",
+                "UnsavedMessage": "This project has unsaved changes. Do you want to close it?"
+            }
+        }
+    },
+    "Layout": {
+        "MenuBar": {
+            "file": "File",
+            "edit": "Edit",
+            "view": "View",
+            "help": "Help",
+            "Language": "Language",
+            "Theme": "Theme",
+            "Settings": "Settings",
+            "AutoSave": "Auto Save",
+            "FileMenu": {
+                "New": "New",
+                "Open": "Open",
+                "Save": "Save",
+                "SaveAs": "Save As",
+                "Export": "Export"
+            },
+            "EditMenu": {
+                "Undo": "Undo",
+                "Redo": "Redo"
+            },
+            "select": "Select",
+            "SelectMenu": {
+                "Invert": "Invert",
+                "Deselect": "Deselect"
+            },
+            "ViewMenu": {
+                "LeftSidePanel": "Left Side Panel",
+                "RightSidePanel": "Right Side Panel",
+                "DualView": "Dual View",
+                "BottomSidePanel": "Bottom Side Panel"
+            },
+            "HelpMenu": {
+                "SoftwareInfo": "Software Info",
+                "Shortcuts": "Shortcuts",
+                "JSPluginGuide": "JS Plugin Guide",
+                "CppPluginGuide": "C++ Plugin Guide"
+            }
+        },
+        "InfoBar": {
+            "InfoState": {
+                "ready": "Ready",
+                "error": "Error",
+                "warning": "Warning",
+                "info": "Information",
+                "success": "Success",
+                "loading": "Loading"
+            },
+            "InfoContent": {
+                "AutoSaveEnabled": "Auto Save Enabled",
+                "AutoSaveDisabled": "Auto Save Disabled",
+                "scriptRunning": "Script Running...",
+                "scriptFailed": "Script Execution Failed",
+                "scriptCompleted": "Script Execution Completed",
+                "scriptAddedVectors": "Added Vectors: ",
+                "noActiveProject": "No active project found.",
+                "selectBitmapLayer": "Please select a bitmap layer.",
+                "compiling": "Compiling...",
+                "compileSuccess": "Compilation Successful",
+                "compileFailed": "Compilation Failed",
+                "messageCopied": "Message copied to clipboard",
+                "copyFailed": "Failed to copy message",
+                "themeSwitchedToDark": "Theme switched to Dark",
+                "themeSwitchedToLight": "Theme switched to Light",
+                "dualViewEnabled": "Dual View Enabled",
+                "dualViewDisabled": "Dual View Disabled",
+                "leftPanelShown": "Left Panel Shown",
+                "leftPanelHidden": "Left Panel Hidden",
+                "rightPanelShown": "Right Panel Shown",
+                "rightPanelHidden": "Right Panel Hidden",
+                "bottomPanelShown": "Bottom Panel Shown",
+                "bottomPanelHidden": "Bottom Panel Hidden",
+                "viewCoupled": "Views Coupled",
+                "viewDecoupled": "Views Decoupled",
+                "toolSelected": "Selected: ",
+                "layerCopied": "Layer copied to clipboard.",
+                "layerCannotCopy": "This layer cannot be copied.",
+                "layerCannotDelete": "This layer cannot be deleted.",
+                "noLayerSelected": "No layer selected.",
+                "layerNotBitmap": "Selected layer is not a bitmap layer.",
+                "noActiveBitmapLayer": "No active bitmap layer selected.",
+                "selectionInverted": "Selection Inverted",
+                "deselected": "Deselected",
+                "undoPerformed": "Undo",
+                "redoPerformed": "Redo",
+                "nothingToUndo": "Nothing to undo",
+                "nothingToRedo": "Nothing to redo",
+                "groupCreated": "Group Created",
+                "ungrouped": "Ungrouped"
+            }
+        },
+        "MainArea": {
+            "PanelUni": {
+                "left": "Left Panel",
+                "workspace": "Work Space",
+                "bottom": "Bottom Panel",
+                "right": "Right Panel"
+            },
+            "Workspace": {
+                "FitToScreen": "Fit to Screen"
+            },
+            "ToolBar": {
+                "LeftToolBar": {
+                    "Bitmap": {
+                        "Pencil": "Pencil",
+                        "Marker": "Marker",
+                        "Eraser": "Eraser",
+                        "Dropper": "Dropper",
+                        "MagicStick": "Magic Stick",
+                        "Filling": "Filling",
+                        "Select": "Select",
+                        "Image": "Image",
+                        "Gradient": "Gradient",
+                        "Clone": "Clone",
+                        "Blur": "Blur",
+                        "Sharpen": "Sharpen",
+                        "Desaturate": "Desaturate",
+                        "Shape": "Shape",
+                        "Pinch": "Pinch",
+                        "Crop": "Crop"
+                    },
+                    "View": {
+                        "Animation": "Animation",
+                        "DualView": "Dual View"
+                    }
+                },
+                "RightToolBar": {
+                    "Vector": {
+                        "Select": "Select",
+                        "FreePath": "Free Path",
+                        "Line": "Line",
+                        "Curve": "Curve",
+                        "Rectangle": "Rectangle",
+                        "Ellipse": "Ellipse",
+                        "Polygon": "Polygon",
+                        "FreeForm": "Free Form",
+                        "Text": "Text",
+                        "Group": "Group"
+                    },
+                    "Custom": {
+                        "Add": "Add Plugin"
+                    },
+                    "View": {
+                        "Animation": "Animation",
+                        "DualView": "Dual View"
+                    }
+                },
+                "TopToolBar": {
+                    "Adjust": {
+                        "Brightness": "Brightness",
+                        "ColorCurve": "Color Curve",
+                        "Temperature": "Temperature",
+                        "Contrast": "Contrast",
+                        "Exposure": "Exposure",
+                        "ToolBox": "Tool Box",
+                        "Script": "JS Script",
+                        "CPPScript": "C++ Script",
+                        "WASMScript": "WASM Script"
+                    },
+                    "Assist": {
+                        "Grid": "Grid",
+                        "Indicator": "Indicator",
+                        "Snap": "Snap",
+                        "MousePos": "Mouse Position",
+                        "SyncView": "Sync View"
+                    }
+                }
+            }
+        },
+        "Panel": {
+            "CustomPlugin": {
+                "Title": "Manage Custom Plugins",
+                "AddPlugin": "Add New Plugin",
+                "Close": "Close",
+                "Remove": "Remove",
+                "ConfirmRemove": "Remove plugin \"{name}\"?",
+                "Name": "Plugin Name",
+                "NamePlaceholder": "Enter plugin name",
+                "ScriptFile": "Script File (.wasm)",
+                "IconFile": "Icon (SVG 100x100)",
+                "Browse": "Browse",
+                "NoFile": "No file selected",
+                "Preview": "Preview",
+                "NoIcon": "No Icon Selected",
+                "InvalidIcon": "Icon must be 100x100px SVG",
+                "InvalidImage": "Invalid Image File",
+                "EnterName": "Please enter a name",
+                "SelectScript": "Please select a script file",
+                "SuccessAdded": "Plugin \"{name}\" added!",
+                "SuccessRemoved": "Plugin \"{name}\" removed",
+                "StorageLimit": "Failed to save plugin: Storage limit reached.",
+                "ExecutionFailed": "Plugin Execution Failed: {error}",
+                "NoPlugins": "No custom plugins installed."
+            },
+            "Preview": "Preview",
+            "ColorPalette": "Color Palette",
+            "Layers": {
+                "Title": "Layers",
+                "NoLayers": "No layers"
+            },
+            "Elements": {
+                "Title": "Elements",
+                "Search": "Search elements...",
+                "NoElements": "No elements"
+            },
+            "Export": {
+                "Title": "Save / Export",
+                "SelectFormats": "Select formats to export:",
+                "vif": "VisualVigor VIF (*.vif)",
+                "png": "PNG Image (*.png)",
+                "jpg": "JPEG Image (*.jpg)",
+                "bmp": "BMP Image (*.bmp)",
+                "tif": "TIFF Image (*.tif)",
+                "gif": "GIF Animation (*.gif)",
+                "svg": "SVG Vector (*.svg)",
+                "Cancel": "Cancel",
+                "Confirm": "Confirm"
+            },
+            "ToolOptions": {
+                "Title": "Tool Options",
+                "NoTool": "No active tool",
+                "NoOptions": "No options available"
+            },
+            "Animation": {
+                "Control": {
+                    "ShowAllLayers": "Show All Layers",
+                    "ShowVisibleOnly": "Show Visible Only",
+                    "GoToStart": "Go to Start",
+                    "PreviousFrame": "Previous Frame",
+                    "Play": "Play",
+                    "Pause": "Pause",
+                    "NextFrame": "Next Frame",
+                    "GoToEnd": "Go to End",
+                    "Loop": "Loop",
+                    "NoLoop": "No Loop",
+                    "PlaybackSpeed": "Playback Speed"
+                }
+            }
+        }
+    },
+    "Tool": {
+        "Options": {
+            "advancedMode": "Advanced Mode",
+            "size": "Size",
+            "sampleSize": "Sample Size",
+            "sampleAllLayers": "Sample All Layers",
+            "isCircular": "Circular Sample",
+            "includeAlpha": "Include Alpha",
+            "tolerance": "Tolerance",
+            "contiguous": "Contiguous",
+            "antiAlias": "Anti-alias",
+            "thinning": "Thinning",
+            "smoothing": "Smoothing",
+            "streamline": "Streamline",
+            "shape": "Shape",
+            "mode": "Mode",
+            "rectangle": "Rectangle",
+            "ellipse": "Ellipse",
+            "polygon": "Polygon",
+            "sides": "Sides",
+            "angle": "Angle",
+            "new": "New Selection",
+            "add": "Add to Selection",
+            "subtract": "Subtract from Selection",
+            "intersect": "Intersect with Selection",
+            "mode_pinch": "Pinch",
+            "mode_bulge": "Bulge",
+            "mode_new": "New",
+            "mode_add": "Add",
+            "mode_subtract": "Sub",
+            "mode_intersect": "Int",
+            "mode_transform": "Transform",
+            "mode_node": "Node",
+            "mode_freehand": "Freehand",
+            "mode_polyline": "Polyline",
+            "mode_none": "None",
+            "mode_binary": "Binary",
+            "mode_edge": "Edge",
+            "keepRatio": "Keep Ratio",
+            "type": "Type",
+            "linear": "Linear",
+            "radial": "Radial",
+            "reverse": "Reverse",
+            "colors": "Gradient Colors",
+            "Gradient": {
+                "Start": "Start",
+                "End": "End"
+            },
+            "aligned": "Aligned",
+            "strength": "Strength",
+            "preserveTransparency": "Preserve Transparency",
+            "fill": "Fill",
+            "stroke": "Stroke",
+            "freehand": "Freehand",
+            "polyline": "Polyline",
+            "EditColor": "Edit Color",
+            "EditingColor": "Editing Color...",
+            "NoneClickToAdd": "None (Click to Add)",
+            "opacity": "Opacity",
+            "brightness": "Brightness",
+            "contrast": "Contrast",
+            "exposure": "Exposure",
+            "temperature": "Temperature",
+            "gamma": "Gamma",
+            "red": "Red",
+            "green": "Green",
+            "blue": "Blue",
+            "strokeWidth": "Stroke Width",
+            "threshold": "Threshold",
+            "curve": "Color Curve"
+        },
+        "Clone": {
+            "SourceSet": "Clone source set",
+            "SetSourceHint": "Alt+Click to set source point"
+        }
+    },
+    "HelpMenu": {
+        "Tutorial": {
+            "Welcome": {
+                "Title": "Welcome to VisualVigor",
+                "Message": "Let's take a detailed tour of the interface functionality."
+            },
+            "MenuBarLeft": {
+                "Title": "Menu Bar (Operations)",
+                "Message": "Access core File operations, Editing history, Selection commands, and View settings."
+            },
+            "MenuBarRight": {
+                "Title": "Menu Bar (System)",
+                "Message": "Toggle Theme, change Language, and view Help resources."
+            },
+            "LeftToolBarBitmap": {
+                "Title": "Bitmap Tools",
+                "Message": "Standard raster editing tools including Pencil, Eraser, Magic Wand, and Gradient fill."
+            },
+            "LeftToolBarView": {
+                "Title": "View Controls",
+                "Message": "Toggle the bottom Animation timeline or switch to Dual View mode."
+            },
+            "TopToolBarAdjust": {
+                "Title": "Image Adjustments",
+                "Message": "Quickly adjust Brightness, Contrast, Exposure, or run automated scripts."
+            },
+            "TopToolBarAssist": {
+                "Title": "View Assistants",
+                "Message": "Toggle Grid visibility, Snapping, Indicators, and Cursor tracking."
+            },
+            "Workspace": {
+                "Title": "Workspace",
+                "Message": "The main canvas. Supports infinite scrolling and zooming."
+            },
+            "RightToolBarVector": {
+                "Title": "Vector Tools",
+                "Message": "Create scalable paths. Includes Selection, Pen, various Shapes, and Text tools."
+            },
+            "LeftPanel": {
+                "Title": "Property Panel",
+                "Message": "Adjust parameters for the currently selected tool or active layer object."
+            },
+            "RightPanel": {
+                "Title": "Layer Panel",
+                "Message": "Manage layer hierarchy, visibility, and blending modes."
+            },
+            "AnimationPanel": {
+                "Title": "Animation Panel",
+                "Message": "Timeline and Keyframe control (Toggle visibility via Left Tool Bar)."
+            },
+            "InfoBar": {
+                "Title": "Info Bar",
+                "Message": "Displays system status and operation results. Click messages to copy to clipboard."
+            }
+        },
+        "Shortcuts": {
+            "Title": "Keyboard Shortcuts",
+            "GroupCommon": "General",
+            "GroupGeneral": "General",
+            "GroupToolsBitmap": "Bitmap Tools",
+            "GroupToolsVector": "Vector Tools",
+            "GroupEdit": "Edit Operations",
+            "GroupView": "View & Nav",
+            "New": "New File",
+            "Open": "Open...",
+            "Save": "Save",
+            "Undo": "Undo",
+            "Redo": "Redo",
+            "Group": "Group",
+            "Ungroup": "Ungroup",
+            "ZoomIn": "Zoom In",
+            "ZoomOut": "Zoom Out",
+            "Fit": "Fit to Screen",
+            "Ctrl": "Ctrl",
+            "Shift": "Shift",
+            "Alt": "Alt",
+            "Space": "Space"
+        },
+        "PluginGuide": {
+            "Title": "JS Plugin Development Guide",
+            "Subtitle": "Extend capabilities using JavaScript",
+            "DownloadDemos": "Download Demo Scripts",
+            "IntroTitle": "Introduction",
+            "IntroText": "VisualVigor supports external scripts to manipulate image data directly. Plugins are simple .js files that export a specific function.",
+            "StructureTitle": "Basic Structure",
+            "StructureText": "Create a .js file and export an 'apply' function:",
+            "VectorTitle": "Generating Vectors",
+            "VectorText": "You can also generate vector shapes by returning an object with a 'vectors' array."
+        },
+        "CppPluginGuide": {
+            "Title": "C++ High Performance Plugin Guide",
+            "Subtitle": "Extend capabilities using C++ (WebAssembly)",
+            "DownloadDemos": "Download C++ Examples",
+            "IntroTitle": "Introduction",
+            "IntroText": "VisualVigor allows you to write high-performance image processing algorithms in C++. These scripts are compiled to WebAssembly on the fly.",
+            "StructureTitle": "Basic Structure",
+            "StructureText": "Plugin files must have a .cpp or .c extension and export an 'applyFilter' function. NOTE: The standard library (std::) is not available.",
+            "AdvancedTitle": "Advanced Processing",
+            "AdvancedText": "You can implement complex algorithms like convolutions or floating point math (e.g. Sepia, Mandelbrot).",
+            "WasmTitle": "WebAssembly Modules (.wasm)",
+            "WasmText": "You can also load pre-compiled .wasm files directly (similar to loading a DLL). This is useful for distributing closed-source plugins or skipping compilation.",
+            "GenerateWasm": "Generate Test .wasm (Invert Red)",
+            "Compiling": "Compiling... (This may take a minute)",
+            "CompileSuccess": "Success! Download Started",
+            "CompileError": "Error: "
+        }
+    },
+    "Collaboration": {
+        "Status": {
+            "Online": "Online",
+            "Offline": "Offline",
+            "Connecting": "Connecting..."
+        },
+        "Dialog": {
+            "Title": "Collaboration",
+            "CreateRoom": "Create Room",
+            "JoinRoom": "Join Room",
+            "YourName": "Your Name",
+            "ServerURL": "Server URL",
+            "RoomCode": "Room Code",
+            "Create": "Create Room",
+            "Join": "Join Room",
+            "Leave": "Leave Room",
+            "Or": "OR",
+            "ConnectedUsers": "Connected Users",
+            "Copy": "Copy",
+            "Commit": "Commit Changes",
+            "Accept": "Accept Changes"
+        },
+        "UserList": {
+            "Title": "Users"
+        },
+        "NoActiveProject": "Open a project before starting collaboration",
+        "Connected": "Connected to collaboration room",
+        "Disconnected": "Disconnected from collaboration room",
+        "ConnectionError": "Failed to connect to collaboration server",
+        "EnterName": "Please enter your name",
+        "EnterRoomCode": "Please enter a room code",
+        "InvalidServerURL": "Invalid server URL (use ws:// or wss://)",
+        "RoomCodeCopied": "Room code copied to clipboard",
+        "LayerLockedBy": "Layer is locked by",
+        "CommitSent": "Changes committed successfully",
+        "CommitEmpty": "No changes to commit",
+        "AcceptedChanges": "Changes accepted",
+        "NoIncomingChanges": "No incoming changes",
+        "IncomingCount": "Incoming: {0}"
+    }
+}

@@ -1,0 +1,145 @@
+/* =========================================
+   Element List (ListStackCombo Style)
+   ========================================= */
+
+.element-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+/* Search Bar */
+.element-search {
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid var(--color-stroke-1);
+}
+
+.element-search__input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--color-stroke-2);
+    border-radius: 4px;
+    background: var(--color-bg-2);
+    color: var(--color-font);
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.element-search__input:focus {
+    outline: none;
+    border-color: var(--color-accent-100);
+    background: var(--color-bg-1);
+}
+
+.element-search__input::placeholder {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* Reuse liststack classes from layerList.css or define here if scoped */
+/* Assuming global scope for now or copied styles */
+
+.element-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduced gap for tighter tree */
+    padding: 0;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.element-item::before {
+    /* Removed dot, using arrow or just indentation */
+    content: none;
+}
+
+.element-item--active {
+    background-color: var(--color-mask-10);
+    border-radius: 4px;
+}
+
+.element-arrow {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray-50);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.element-arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.element-children {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.element-vis, .element-lock {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.element-vis:hover, .element-lock:hover {
+    opacity: 1;
+}
+
+.element-vis.visible, .element-lock.locked {
+    opacity: 1;
+}
+
+.element-name {
+    flex: 1;
+    font-size: 14px;
+    color: var(--color-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Override generic list-delete for smaller element items */
+.element-item .list-delete,
+.element-item .list-confirm-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.element-item .list-delete {
+    /* display: none; Removed to prevent height jump */
+    opacity: 0;
+    pointer-events: none;
+}
+
+.element-item:hover .list-delete {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon-small {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-tiny {
+    width: 12px;
+    height: 12px;
+}

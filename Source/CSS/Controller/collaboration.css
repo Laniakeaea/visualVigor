@@ -1,0 +1,314 @@
+/* =========================================
+   Collaboration Styles
+   =========================================
+   Uses standard dialog system (dialog.css) for 
+   overlay, window, header, body, footer, buttons.
+   Only collab-specific content styles here.
+   ========================================= */
+
+/* ─── Status Button (InfoBar) ─── */
+.collab-status-btn {
+    gap: 6px;
+}
+
+.collab-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.collab-status-dot--disconnected {
+    background-color: var(--color-gray-100);
+}
+
+.collab-status-dot--connecting {
+    background-color: var(--color-orange-100);
+    animation: collab-pulse 1s ease-in-out infinite;
+}
+
+.collab-status-dot--connected {
+    background-color: var(--color-green-100);
+}
+
+@keyframes collab-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.collab-status-text {
+    white-space: nowrap;
+}
+
+/* ─── User Buttons (InfoBar) ─── */
+/* Each remote user is their own info-bar__btn with user color as background */
+.collab-user-btn {
+    min-width: 30px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.collab-user-btn:hover {
+    filter: brightness(1.1);
+}
+
+.collab-user-btn--more {
+    background-color: var(--color-gray-50);
+    font-size: 12px;
+    padding: 0 6px;
+}
+
+/* ─── Changes Button (InfoBar) ─── */
+/* Inherits font from .info-bar__btn; only override color */
+.collab-changes-btn {
+    color: var(--color-blue-100);
+}
+
+/* ─── Dialog Window Sizing ─── */
+.collab-dialog-window {
+    min-width: 400px;
+    max-width: 500px;
+}
+
+/* ─── Form Layout ─── */
+.collab-form,
+.collab-connected {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.collab-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.collab-form-label {
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: 14px;
+    color: var(--color-font);
+}
+
+/* Left-align text inputs in collab forms */
+.collab-form-field .text-input {
+    text-align: left;
+}
+
+/* ─── Divider ─── */
+.collab-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-font);
+    font-size: 14px;
+    font-family: var(--font-basic-family);
+}
+
+.collab-divider::before,
+.collab-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-gray-25);
+}
+
+/* ─── Room Code Display ─── */
+.collab-room-code {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.collab-room-code code {
+    flex: 1;
+    height: 30px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--color-gray-25);
+    background: transparent;
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-size: 18px;
+    color: var(--color-accent-50);
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.collab-copy-btn.dialog-btn {
+    padding: 2px 10px;
+    height: 30px;
+    font-size: 16px;
+}
+
+/* ─── Sync Actions (Commit / Accept) ─── */
+.collab-sync-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.collab-sync-actions .dialog-btn {
+    flex: 1;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* ─── Badge (Incoming Commit Count) ─── */
+.collab-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 9px;
+    background: var(--color-red-50);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* ─── User List (Dialog) ─── */
+.collab-user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.collab-user-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.collab-user-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    transition: background-color 0.15s;
+}
+
+.collab-user-item:hover {
+    background: var(--color-gray-5);
+}
+
+.collab-user-item--local {
+    background: var(--color-gray-5);
+}
+
+.collab-user-name {
+    font-family: var(--font-basic-family);
+    font-size: 18px;
+    color: var(--color-font);
+}
+
+/* ─── User Avatars (Shared) ─── */
+.collab-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* ─── User List Panel ─── */
+.collab-user-list-panel {
+    background: var(--color-bg-gray);
+    border: 1px solid var(--color-gray-15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.collab-user-list-header {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: var(--font-basic-weight);
+    color: var(--color-font);
+    border-bottom: 1px solid var(--color-gray-15);
+    font-family: var(--font-basic-family);
+}
+
+.collab-user-list-body {
+    padding: 4px;
+}
+
+.collab-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.collab-user-tool {
+    font-size: 12px;
+    color: var(--color-gray-50);
+    font-family: var(--font-basic-family);
+}
+
+/* ─── Remote Cursor Overlays ─── */
+.collab-cursor-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.collab-cursor {
+    position: absolute;
+    pointer-events: none;
+    transition: transform 80ms ease-out;
+}
+
+.collab-cursor-label {
+    position: absolute;
+    top: 18px;
+    left: 10px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #fff;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* ─── Layer Lock Indicator ─── */
+.layer-lock-collab {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #fff;
+    background: var(--color-red-50);
+    margin-left: 6px;
+}
+
+.layer-lock-collab::before {
+    content: '🔒';
+    font-size: 10px;
+}

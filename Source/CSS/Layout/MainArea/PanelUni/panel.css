@@ -1,0 +1,171 @@
+/* =========================================
+   Unified Panel Layout
+   ========================================= */
+
+/*
+ * Unified Panel Styles
+ * Purpose: A single, abstract definition for all panels (Side, Bottom, etc.)
+ * Concept: A panel is just a container with a specific orientation (Vertical/Horizontal).
+ */
+
+:root {
+  /* Dimensions */
+  --panel-width-vertical: 400px;
+  --panel-min-width-vertical: 400px;
+  --panel-max-width-vertical: 600px;
+  
+  --panel-height-horizontal: 400px;
+  --panel-min-height-horizontal: 200px;
+  --panel-max-height-horizontal: 400px;
+  
+  /* Appearance */
+  --panel-bg: var(--color-gray-15);
+  --panel-radius: 20px;
+  --panel-padding: 10px;
+  --panel-gap: 10px;
+  
+  /* Inner Content */
+  --panel-content-bg: var(--color-bg-main);
+  --panel-content-radius: 10px;
+  
+  /* Title Bar */
+  --panel-title-height: 30px;
+}
+
+/* =========================================
+   Base Panel Class
+   ========================================= */
+
+.layout-panel {
+  background: var(--panel-bg);
+  border-radius: var(--panel-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--panel-gap);
+  padding: var(--panel-padding) 0; /* Vertical padding only */
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+/* =========================================
+   Orientation Modifiers
+   ========================================= */
+
+/* Vertical Panel (e.g., SideBar) */
+/* Fixed Width, Full Height */
+.layout-panel--vertical {
+  width: var(--panel-width-vertical);
+  min-width: var(--panel-min-width-vertical);
+  max-width: var(--panel-max-width-vertical);
+  height: 100%;
+}
+
+/* Horizontal Panel (e.g., BottomBar) */
+/* Full Width, Fixed Height */
+.layout-panel--horizontal {
+  width: 100%;
+  height: var(--panel-height-horizontal);
+  min-height: var(--panel-min-height-horizontal);
+  max-height: var(--panel-max-height-horizontal);
+}
+
+/* Main Panel (Center Content) */
+/* Flex Grow, Full Height */
+.layout-panel--main {
+  flex: 1 1 auto;
+  width: auto;
+  height: 100%;
+  min-width: 0; /* Prevent flex overflow */
+}
+
+/* =========================================
+   Positioning Helpers
+   ========================================= */
+
+/* 
+ * Note: Margins are removed because DragLine components (10px width) 
+ * now act as the spacers between panels.
+ */
+.layout-panel--left { margin-right: 0; }
+.layout-panel--right { margin-left: 0; }
+.layout-panel--bottom { margin-top: 0; }
+.layout-panel--top { margin-bottom: 10px; }
+
+/* =========================================
+   Internal Components
+   ========================================= */
+
+/* Title Bar */
+.layout-panel__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--panel-title-height);
+  gap: 10px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+}
+
+.layout-panel__title-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-basic-family);
+  font-size: 24px;
+  font-weight: var(--font-basic-weight);
+  font-style: var(--font-basic-style);
+  color: var(--color-font);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  transition: color var(--transition-theme);
+}
+
+/* Content Container */
+.layout-panel__container {
+  flex: 1 1 auto;
+  border-radius: var(--panel-content-radius);
+  background: var(--panel-content-bg);
+  margin: 0 10px; /* Horizontal margin */
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  display: flex;
+  flex-direction: column; /* Changed to column to stack content properly */
+  transition: background-color var(--transition-theme), color var(--transition-theme);
+}
+
+.layout-panel__content {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* View Containers */
+.layers-view,
+.properties-view {
+    padding: 10px;
+}
+
+/* =========================================
+   Workspace Specifics
+   ========================================= */
+
+.layout-panel__container.workspace {
+  display: flex;
+  gap: 10px;
+  background: transparent; /* Override default panel background */
+}
+
+.workspace__split-view {
+  flex: 1;
+  background-color: var(--color-bg-main);
+  border-radius: 10px;
+  transition: background-color var(--transition-theme);
+}

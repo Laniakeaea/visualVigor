@@ -1,0 +1,102 @@
+/* =========================================
+   CheckBox Component
+   ========================================= */
+
+/*
+ * CheckBox Component
+ * File: checkBox.css
+ * Purpose: Custom styled checkbox inputs.
+ * Layout: Flexbox alignment with labels.
+ * Features: Custom appearance, hover states, disabled states.
+ */
+
+/* Hidden Native Input */
+.checkbox__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid var(--color-gray-25);
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.checkbox__input:hover {
+    border-color: var(--color-accent-20);
+}
+
+.checkbox__input:focus {
+    border-color: var(--color-accent-50);
+}
+
+.checkbox__input:checked {
+    background: var(--color-accent-50);
+    border-color: var(--color-accent-50);
+}
+
+.checkbox__input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Label Container */
+.checkbox__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+.checkbox__text {
+    font-size: 18px;
+    font-family: var(--font-basic-family);
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    user-select: none;
+    color: var(--color-font);
+    transition: color 0.2s ease;
+}
+
+.checkbox__label:hover .checkbox__text {
+    color: var(--color-accent-50);
+}
+
+.checkbox__label:has(.checkbox__input:disabled) {
+    cursor: not-allowed;
+}
+
+.checkbox__label:has(.checkbox__input:disabled):hover .checkbox__text {
+    color: inherit;
+}
+
+/* Strikethrough for unchecked state (Optional feature from reference) */
+.checkbox__label--strikethrough:has(.checkbox__input:not(:checked)) .checkbox__text {
+    position: relative;
+    color: color-mix(in srgb, var(--color-font) 50%, transparent);
+}
+
+.checkbox__label--strikethrough:has(.checkbox__input:not(:checked)) .checkbox__text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: var(--color-accent-50);
+    transform: translateY(-50%);
+}
+
+/* Checkbox Group (Combo) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}

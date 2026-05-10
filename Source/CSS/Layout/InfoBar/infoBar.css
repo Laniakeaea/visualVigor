@@ -1,0 +1,150 @@
+/* =========================================
+   Info Bar Layout
+   ========================================= */
+
+/*
+ * Info Bar Component
+ * Purpose: Status information display area located at the bottom of the main content, providing a left-right split layout.
+ * Features: Bottom rounded corners (30px) to match the overall UI style.
+ * Dependencies: Theme color variables (e.g., --color-gray-25 / --color-gray-35) from theme.css.
+ * Dimensions: Overall height 50px; Button height 30px, min-width 40px, padding 0 12px.
+ * Interaction: Background color transition on hover; Global focus styles removed in theme.css.
+ */
+
+/* Info Bar Container */
+.info-bar {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border-bottom-left-radius: 30px;  /* Bottom-left rounded corner */
+  border-bottom-right-radius: 30px; /* Bottom-right rounded corner */
+  border-top-left-radius: 0;        /* No top rounded corners, connects smoothly with content above */
+  border-top-right-radius: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 0px;
+}
+
+/* =========================================
+   Split Layout
+   ========================================= */
+
+/* 
+ * Left and Right Columns
+ * - Left Column (info-bar__left): Left-aligned, displays status info, mode indicators, etc.
+ * - Right Column (info-bar__right): Right-aligned, displays operation buttons, shortcuts, etc.
+ * Both columns share basic styles, alignment controlled by justify-content.
+ */
+.info-bar__left,
+.info-bar__right {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;        /* Horizontal padding ensures buttons don't touch edges */
+  gap: 10px;              /* Spacing between buttons */
+}
+
+.info-bar__left {
+  flex: 1;
+  justify-content: flex-start; /* Left align */
+  /* Allow content to wrap or scroll if overflow */
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Horizontal scroll to prevent content overflow */
+  overflow-y: hidden;
+}
+
+.info-bar__right {
+  flex: 1;
+  justify-content: flex-end;   /* Right align */
+}
+
+/* =========================================
+   Button Styles
+   ========================================= */
+
+/* Info Bar Common Button */
+.info-bar__btn {
+  height: 30px;
+  min-width: 40px;
+  padding: 0 15px;
+  background: var(--color-gray-25);
+  border: none;
+  border-radius: 10px; /* Default radius, first/last buttons overridden */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition-theme);
+  font-family: var(--font-basic-family);
+  font-weight: var(--font-basic-weight);
+  font-style: var(--font-basic-style);
+  font-size: 20px;
+  color: var(--color-font);
+  white-space: nowrap;
+  overflow-x: hidden;
+  flex-shrink: 0;
+}
+
+/* Special Radius for First Button in Left Column */
+/* Bottom-left corner increased to 20px to match infoBar's bottom corner */
+.info-bar__left .info-bar__btn:first-child {
+  border-radius: 10px 10px 10px 20px;
+  white-space: nowrap;
+}
+
+/* Special Radius for Last Button in Right Column */
+/* Bottom-right corner increased to 20px to match infoBar's bottom corner */
+.info-bar__right .info-bar__btn:last-child {
+  border-radius: 10px 10px 20px 10px;
+  white-space: nowrap;
+}
+
+/* Hover Feedback */
+.info-bar__btn:hover {
+  background: var(--color-gray-35);
+}
+
+/* =========================================
+   Status Styles
+   ========================================= */
+
+/*
+ * InfoSystem Status Styles
+ * Purpose: Provides different background and text colors for status buttons (usually the first button).
+ * States: Ready (Gray), Error (Red), Warning (Yellow), Info (Blue), Success (Green).
+ * Design: Background uses 20% opacity, text uses 100% opacity for clarity.
+ */
+
+/* Ready State: Default gray, indicates system ready */
+.info-bar__btn--state-ready {
+  background: var(--color-gray-20);
+  color: var(--color-gray-100);
+}
+
+/* Error State: Red, indicates error */
+.info-bar__btn--state-error {
+  background: var(--color-red-20);
+  color: var(--color-red-100);
+}
+
+/* Warning State: Yellow, indicates warning */
+.info-bar__btn--state-warning {
+  background: var(--color-yellow-20);
+  color: var(--color-yellow-100);
+}
+
+/* Info State: Blue, indicates information */
+.info-bar__btn--state-info {
+  background: var(--color-blue-20);
+  color: var(--color-blue-100);
+}
+
+/* Success State: Green, indicates success */
+.info-bar__btn--state-success {
+  background: var(--color-green-20);
+  color: var(--color-green-100);
+}
+

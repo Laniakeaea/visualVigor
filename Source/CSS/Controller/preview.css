@@ -1,0 +1,39 @@
+/* =========================================
+   Preview Component
+   ========================================= */
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.preview__canvas {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    
+    /* Pixelated Rendering */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    
+    flex-shrink: 0;
+}
+
+.preview__meta {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-font);
+    opacity: 0.75;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

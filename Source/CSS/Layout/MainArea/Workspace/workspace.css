@@ -1,0 +1,73 @@
+/* =========================================
+   Workspace Layout
+   ========================================= */
+
+/*
+ * Workspace Layout Container
+ * File: workspace.css
+ * Purpose: Main container layout for the workspace area.
+ * Layout: Flexbox split views.
+ * Features: Split view support, container gaps.
+ */
+
+/* 
+ * Workspace Container & Split Views
+ * Added to ensure equal 50/50 split
+ */
+.workspace {
+    display: flex !important; /* Ensure flex layout */
+    flex-direction: row;
+    gap: var(--ws-gap, 10px); /* Fallback if var not available in this scope */
+}
+
+.workspace__split-view {
+    flex: 1;
+    min-width: 0; /* Critical: allows flex item to shrink below content size */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 
+ * Workspace View Container 
+ * Structure: Vertical Flex
+ * - Header (FitToScreen + Horizontal Ruler)
+ * - Body (Vertical Ruler + Canvas Container)
+ */
+.workspace__view {
+    /* Local Variables for Consistency */
+    --ws-ruler-size: 30px;
+    --ws-gap: 10px;
+    --ws-radius-outer: 10px;
+    --ws-radius-inner: 5px;
+
+    /* Guide Colors */
+    --color-guide: var(--color-orange-100);
+    --color-guide-active: var(--color-yellow-50);
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-main); /* Reference .panelContainer */
+    border-radius: var(--ws-radius-outer); /* Reference .panelContainer */
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: var(--ws-gap); /* Spacing from edges */
+    gap: var(--ws-gap); /* Gap between Header and Body */
+}
+
+/* =========================================
+   Row 2: Body
+   ========================================= */
+.workspace__body {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    /* Height is handled by flex: 1 */
+    width: 100%;
+    position: relative;
+    gap: var(--ws-gap); /* Gap between vertical ruler and canvas */
+    min-height: 0; /* Prevent overflow issues in flex column */
+}

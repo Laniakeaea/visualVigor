@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "append_css",
+			"type": "shell",
+			"command": "echo",
+			"args": [
+				"d:\\Files\\DevCoding\\VSCode\\VisualVigorWeb\\Source\\CSS\\Controller\\layerList.css",
+				".layer-type-vector .layer-name {\n    font-style: italic;\n}",
+				".layer-item"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		}
+	]
+}

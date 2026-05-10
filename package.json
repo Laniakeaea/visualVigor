@@ -1,0 +1,22 @@
+{
+  "name": "visual-vigor",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "collab-server": "node server/collabServer.js"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "glfx": "^0.0.4",
+    "paper": "^0.12.18",
+    "perfect-freehand": "^1.2.2",
+    "yjs": "^13.6.0",
+    "y-websocket": "^2.0.0",
+    "lib0": "^0.2.88"
+  }
+}

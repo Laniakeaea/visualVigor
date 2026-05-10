@@ -1,0 +1,110 @@
+/* =========================================
+   Workspace Canvas
+   ========================================= */
+
+/*
+ * Workspace Canvas Component
+ * File: workspaceCanvas.css
+ * Purpose: Styles for the main drawing area (viewport).
+ * Layout: Absolute positioning for canvas element.
+ * Features: Background, border, and transform handling.
+ */
+
+/* Canvas Container (Viewport) */
+.workspace__viewport {
+    flex: 1;
+    height: 100%;
+    background-color: var(--color-bg-main); /* Reference .board_wrapper */
+    border-radius: var(--ws-radius-inner); /* Reference .main_wrapper */
+    position: relative;
+    overflow: hidden; /* Hide scrollbars, we use custom pan/zoom */
+    /* Remove flex centering, we use absolute positioning for the canvas */
+    display: block; 
+    
+    /* Prevent text selection during drag operations */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* The Actual Canvas Element (Bitmap Artboard) */
+.workspace__canvas {
+    /* Default to transparent as per design doc */
+    background-color: transparent;
+    /* Initial size, will be controlled by JS */
+    width: 800px;
+    height: 600px; 
+    
+    /* Theme colored border for the artboard */
+    /* Border is handled by ViewportOverlayController.js */
+    border: none;
+    
+    /* Critical for CameraController */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    /* will-change: transform;  <-- Removed to prevent rasterization of SVG children */
+    
+    /* Pixelated Rendering for Main Canvas */
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Ensure all child canvases (layers) are also pixelated */
+.workspace__canvas canvas {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Viewport Overlay (Guides, Grid, etc.) */
+.workspace__viewport-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to canvas */
+    z-index: 100;
+}
+
+/* --- Overlay Labels (Mouse Pos, Zoom Level) --- */
+
+.workspace__overlay-label {
+    position: absolute;
+    z-index: 200;
+    pointer-events: none;
+    white-space: nowrap;
+
+    /* Appearance (Match Tooltip) */
+    background: var(--color-bg-gray);
+    color: var(--color-font);
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: none;
+
+    /* Typography */
+    font-family: inherit;
+    font-weight: var(--font-basic-weight);
+    font-style: var(--font-basic-style);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* Zoom Level Label */
+.workspace__zoom-label {
+    /* Inherits .workspace__overlay-label */
+    top: 10px;
+    right: 10px;
+    
+    /* Fade Effect */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.workspace__zoom-label.show {
+    opacity: 1;
+}    
+
